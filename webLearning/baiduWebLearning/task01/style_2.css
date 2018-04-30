@@ -1,0 +1,31 @@
+/* CSS Document */
+
+.cont{
+width:650px;
+height:810px;
+margin:0px auto;
+border:1px solid gray;
+text-indent:10px;
+}
+.box11,.box{
+position:relative;
+float:left;
+
+}
+.box1{clear:both;}
+p{
+float:left;
+}
+span{
+display:block;
+clear:both;
+padding:10px 0px;
+}
+.resume{
+width:20%;
+height:100%;
+background-color: #0099FF;
+color:#FFFFFF;
+text-indent:0px;
+text-align:center;
+}
