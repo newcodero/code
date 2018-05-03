@@ -1,0 +1,41 @@
+/* CSS Document */
+.cont{
+width:800px;
+height:420px;
+margin:0px auto;
+border:1px solid gray;
+border-bottom:none;
+text-indent:10px;
+/*overflow:hidden;*/
+}
+.resume{
+width:100%;
+height:70px;
+background-color:#999999;
+color:#FFFFFF;
+
+}
+h1{
+float:left;
+position: relative;
+top: 50%;
+transform:translatey(-50%);}
+.boxh2{
+width:150px;
+float:left;
+background-color:#CCCCCC;}
+.box1{
+border-bottom:1px solid gray;
+height:70px;}
+.box11 p,h1{
+margin:0px;
+
+}
+span,a{
+padding-left:5px;
+padding-right:15px;}
+.box11{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
