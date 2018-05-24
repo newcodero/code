@@ -105,4 +105,5 @@ m 执行多行匹配
     ^[a-z]+$　　匹配由26个英文字母的小写组成的字符串
     ^[A-Za-z0-9]+$　　匹配由数字和26个英文字母组成的字符串
     ^\w+$　　匹配由数字、26个英文字母或者下划线组成的字符串
+4,js事件：https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events
 
