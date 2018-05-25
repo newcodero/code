@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>让你和页面对话</title>
+<style>
+	<!--任务2css-->
+	select {
+		display: none;
+	}
+	<!--任务3css-->
+	.palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+	.palette li {
+		display:inline-block;
+		width: 40px;
+		height: 40px;
+		border: 1px solid #000;
+		cursor: pointer;
+	}
+</style>
+</head>
+
+<body>
+	<p>任务1::
+	当点击按钮 submit-btn 时，在console中输出 name 中的内容<br>
+	在输入过程中，如果按回车键，则同样执行上一条的需求<br>
+	在输入过程中，如果按 ESC 键，则把输入框中的内容清空</p>
+	
+	<input id="name" type="text">    
+	<button id="submit-btn">Submit</button><br>
+	<script>
+		document.querySelector("#submit-btn").onclick=function(){
+			var text=document.querySelector("#name").value;
+			console.log(text);	
+		};
+		document.onkeydown=function(event){
+				if(event&&event.keyCode==13){
+				var text=document.querySelector("#name").value;
+					console.log(text);
+				};
+				if(event&&event.keyCode==27){
+					document.querySelector('#name').value='';
+				};
+			};
+	</script>
+	<p>任务2::
+	当用户选择了 School 的单选框时，显示 School 的下拉选项，隐藏 Company 的下拉选项<br>
+	当用户选择了 Company 的单选框时，显示 Company 的下拉选项，隐藏 School 的下拉选项
+	</p>
+	<label>
+        <input id="school" name="status" type="radio">
+        School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio">
+        Company
+    </label>
+
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+	<script>
+		var select1=document.getElementsByName('status');
+		for(i=0;i<select1.length;i++){
+			select1[i].onchange=function mychange(){
+			var school=document.querySelector('#school');
+			var company=document.querySelector('#company');
+			if(school.checked){
+				document.querySelector('#school-select').style.cssText="display:block;";
+				document.querySelector('#company-select').style.cssText='display:none;';
+			};
+			if(company.checked){
+				document.querySelector('#company-select').style.cssText='display:block';
+				document.querySelector('#school-select').style.cssText="display:none;";
+			};
+		};
+		};	
+	</script>
+	<P>任务3：：点击某一个 Li 标签时，将 Li 的背景色显示在 P 标签内，并将 P 标签中的文字颜色设置成 Li 的背景色</P>
+         
+    <ul class="palette">
+        <li style="background-color:crimson"></li>
+        <li style="background-color:bisque"></li>
+        <li style="background-color:blueviolet"></li>
+        <li style="background-color:coral"></li>
+        <li style="background-color:chartreuse"></li>
+        <li style="background-color:darkolivegreen"></li>
+        <li style="background-color:cyan"></li>
+        <li style="background-color:#194738"></li>        
+    </ul>
+
+    <p class="color-picker"></p>
+
+    <script>
+        var list = document.querySelectorAll("li");
+        for (var i =0;i <list.length ; i++) {
+            list[i].onclick = function(e) {
+                var t = e.target;
+                var c = t.style.backgroundColor;
+                var p = document.getElementsByClassName("color-picker")[0];
+                p.innerHTML = c;
+                p.style.color = c;
+
+            }
+        }
+    </script>
+	<p>任务4：：分别使用 setTimeout 和 setInterval 实现以下功能：
+	点击按钮时，开始改变 fade-obj 的透明度，开始一个淡出（逐渐消失）动画，直到透明度为0<br>
+	在动画过程中，按钮的状态变为不可点击<br>
+	在动画结束后，按钮状态恢复，且文字变成“淡入”<br>
+	在 按钮显示 淡入 的状态时，点击按钮，开始一个“淡入”（逐渐出现）的动画，和上面类似按钮不可点，直到透明度完全不透明<br>
+	淡入动画结束后，按钮文字变为“淡出”<br>
+	暂时不要使用 CSS animation （以后我们再学习）</p>
+	<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+	<button id="fade-btn">淡出</button>
+	<script>
+		document.querySelector('#fade-btn').addEventListener('click',delay);
+		function delay(){
+			setTimeout(fade,10);
+		};
+		function btnDisabled(){
+			var btn=document.querySelector('#fade-btn');
+			btn.disabled=false;
+		};
+		function fade(){
+			var btn=document.querySelector('#fade-btn');
+			var text=document.querySelector('#fade-btn').innerText;
+			var obj=document.querySelector('#fade-obj');
+			obj.style.transition="opacity 3s";
+			
+				console.log(btn.disabled);
+			if(text=='淡出'){
+				obj.style.cssText+=('opacity:0;');
+				btn.innerText='淡入';
+				btn.disabled=true;
+				setTimeout(btnDisabled,3000);
+			};
+			if(text=='淡入'){
+				obj.style.cssText+=('opacity:1;');
+				btn.innerText='淡出';
+				btn.disabled=true;
+				setTimeout(btnDisabled,3000);
+			};
+		}
+	</script>
+	<p>任务5：：实现一个帧动画；<br>
+	基于一个我们提供的图片，实现 IFE2016中Erik笑容的动画<br>
+	注意，依然不要使用 CSS animation，因为我们这里要学习的是使用 JavaScript 来操作 CSS，而不是为了完成这个任务。</p>
+	<p class="smile-animation" style="width:480px;height:480px;"></p>
+	<script>
+		var smileAnimation=document.querySelector('.smile-animation');
+		smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_01.png)";
+		setInterval(animated,2800);
+		
+		function animated(){		
+			setTimeout(Erik1,0);
+			setTimeout(Erik3,200);
+			setTimeout(Erik5,400);
+			setTimeout(Erik7,600);
+			setTimeout(Erik9,800);
+			setTimeout(Erik11,1000);
+			setTimeout(Erik13,1200);
+			setTimeout(Erik14,1400);
+			setTimeout(Erik12,1600);
+			setTimeout(Erik10,1800);
+			setTimeout(Erik8,2000);
+			setTimeout(Erik6,2200);
+			setTimeout(Erik4,2400);
+			setTimeout(Erik2,2600);
+		};
+		
+		function Erik1(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_01.png)";
+		};	
+		function Erik2(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_02.png)";
+		};
+		function Erik3(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_03.png)";
+		};
+		function Erik4(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_04.png)";
+		};
+		function Erik5(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_05.png)";
+		};
+		function Erik6(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_06.png)";
+		};
+		function Erik7(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_07.png)";
+		};
+		function Erik8(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_08.png)";
+		};
+		function Erik9(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_09.png)";
+		};
+		function Erik10(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_10.png)";
+		};
+		function Erik11(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_11.png)";
+		};
+		function Erik12(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_12.png)";
+		};
+		function Erik13(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_13.png)";
+		};
+		function Erik14(){
+			smileAnimation.style.backgroundImage="url(images/images2/erik_ce204002_14.png)";
+		};
+	</script>
+</body>
+</html>
