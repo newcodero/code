@@ -109,4 +109,6 @@ m 执行多行匹配
     keyCode对照表：https://www.cnblogs.com/feifei-cyj/p/8006680.html
     html dom style 对象属性：http://www.w3school.com.cn/jsref/dom_obj_style.asp#list
     事件委托：https://www.cnblogs.com/lazychen/p/5664788.html
+5,String对象属性和方法：
+    http://www.w3school.com.cn/jsref/jsref_obj_string.asp
 
