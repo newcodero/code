@@ -111,4 +111,8 @@ m 执行多行匹配
     事件委托：https://www.cnblogs.com/lazychen/p/5664788.html
 5,String对象属性和方法：
     http://www.w3school.com.cn/jsref/jsref_obj_string.asp
+6,遍历二叉树：
+    先序遍历：根左右；
+    中序遍历：左根右；
+    后序遍历：左右根；
 
