@@ -115,4 +115,6 @@ m 执行多行匹配
     先序遍历：根左右；
     中序遍历：左根右；
     后序遍历：左右根；
+7，排序问题:sort()默认按unicode排序，数字在大写字母之前，大写字母在小写字母之前。数字<大写字母<小写字母
+    https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
