@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title> 倒数开始 滴答滴 滴答滴</title>
+</head>
+
+<body>
+	<p id="date-result"></p>
+	<p id="date-result2"></p>
+	<select id="year-select">
+	</select><span>年</span>
+	
+	<select id="month-select">
+	</select><span>月</span>
+	
+	<select id="day-select">
+	</select><span>日</span>
+	
+	<select id="hour-select">       
+	</select><span>时</span>
+	
+	<select id="minute-select">
+	</select><span>分</span>
+	<select id="second-select">
+	</select><span>秒</span>
+	<p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+<script>
+	function Go() {
+		console.log("Go");
+	}
+	
+	function GoSteps(n) {
+		
+		if(n>0&&n<=1){
+			Go();
+		}else if(n>1){
+			n=Math.floor(n)
+			while(n--){
+				Go();
+			};
+		}else{
+			return 0;
+		}
+	}
+	 GoSteps(); //测试不通过
+	/*GoSteps(10);//  Go 10次
+	GoSteps(1); // Go 1次
+	GoSteps(); // Go 1次，认为缺少参数时，默认参数为1
+	GoSteps(0)  // 0次
+	GoSteps(-1);  // 0次
+	GoSteps(1.4);  // Go 1次
+	GoSteps(1.6);  // Go 1次
+	GoSteps(-1);  // 0次
+	GoSteps(true);  // Go 1次
+    GoSteps(false)  // 0次
+	GoSteps("Test");  // 0次
+	GoSteps(NaN);  // 0次
+	GoSteps(null);  // 0次*/
+	
+	
+	//任务2
+		var dateResult=document.querySelector('#date-result');
+		var dateResult2=document.querySelector('#date-result2');
+		setInterval(showTime,1000);
+		function showTime(){
+			var date=new Date();
+			var year=date.getFullYear();
+			var month=date.getMonth();
+			var dates=date.getDate();
+			var day=date.getDay();
+			var hour=date.getHours();
+			var minutes=date.getMinutes();
+			var seconds=date.getSeconds();
+			dateResult2.innerHTML=year+'/'+month+'/'+dates+' '+hour+':'+minutes+':'+seconds;
+			dateResult.innerHTML=year+'年'+month+'月'+dates+'日 '+'星期'+day+' '+hour+':'+minutes+':'+seconds;
+		};
+		
+		//任务3
+		
+		var yearSelector=document.querySelector('#year-select');
+		var monthSelector=document.querySelector('#month-select');
+		var daySelector=document.querySelector('#day-select');
+		var hourSelector=document.querySelector('#hour-select');
+		var minuteSelector=document.querySelector('#minute-select');
+		var secondSelector=document.querySelector('#second-select');
+		var resultWrapper=document.querySelector('#result-wrapper');
+		var selectors=document.querySelectorAll("select");
+		for(var i=0;i<32;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=i+2000;
+			yearSelector.appendChild(opt);
+		};
+		for(var i=1;i<13;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			monthSelector.appendChild(opt);
+		};
+		for(var i=0;i<24;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			hourSelector.appendChild(opt);
+		}
+		for(var i=0;i<61;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			minuteSelector.appendChild(opt);
+		}
+		for(var i=0;i<61;i++){
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			secondSelector.appendChild(opt);
+		};	
+		function timeArr(){
+			var arr=new Array();
+			var date=new Date();
+			arr.push(date.getFullYear());
+			arr.push(date.getMonth());
+			arr.push(date.getDate());
+			arr.push(date.getHours());
+			arr.push(date.getMinutes());
+			arr.push(date.getSeconds());
+			return arr;
+		};
+		for(var i=0;i<selectors.length;i++){
+			if(i==0||i==1){
+				selectors[i].onchange=change;
+			}else{
+				selectors[i].onchange=cal;
+			};
+		};
+		function change(){
+			if(true){
+				var monValue=monthSelector.value;
+				daySelector.innerHTML='';
+				if(monValue==1||monValue==3||monValue==5||monValue==7||monValue==8||monValue==10||monValue==12){
+					for(var i=1;i<32;i++){
+						var opt=document.createElement('option');
+						opt.innerHTML=i;
+						daySelector.appendChild(opt);
+					};
+				};
+				if(monValue==4||monValue==6||monValue==9||monValue==11){
+					for(var i=1;i<31;i++){
+						var opt=document.createElement('option');
+						opt.innerHTML=i;
+						daySelector.appendChild(opt);
+					};
+				};
+				if(monValue==2){
+					var yearValue=yearSelector.value;
+					if(yearValue%400==0||(yearValue%100!==0&&yearValue%4==0)){
+						for(var i=1;i<30;i++){
+							var opt=document.createElement('option');
+							opt.innerHTML=i;
+							daySelector.appendChild(opt);
+						}
+					}else{
+						for(var i=1;i<29;i++){
+							var opt=document.createElement('option');
+							opt.innerHTML=i;
+							daySelector.appendChild(opt);
+						}
+					};
+				};
+			};
+			cal();
+		};
+		
+		function cal(){
+			var time=new Array();
+			for(var i=0;i<selectors.length;i++){
+				time.push(selectors[i].value);
+			};
+			var nowTime=timeArr();
+			var Differ=new Array();
+			for(var i=0;i<time.length;i++){
+				Differ[i]=time[i]-nowTime[i];
+			};
+			inner(Differ,time,nowTime);
+		};
+		function inner(Differ,time,nowTime){
+			if(Differ[0]>=0){
+				resultWrapper.innerHTML="现在距离 "+time[0]+'年'+time[1]+'月'+time[2]+'日 '+ time[3]+'时'+time[4]+'分'
+				+time[5]+'秒'+'还有'+Differ[0]+ '年'+Differ[1]+ '月'+Differ[2]+ '天'+Differ[3]+ '小时'+ Differ[4]+'分'+Differ[5]+'秒';
+			}else{
+				resultWrapper.innerHTML="现在距离 "+time[0]+'年'+time[1]+'月'+time[2]+'日 '+ time[3]+'时'+time[4]+'分'
+				+time[5]+'秒'+'已经过去了'+Math.abs(Differ[0])+ '年'+Differ[1]+ '月'+Differ[2]+ '天'+Differ[3]+ '小时'+ Differ[4]+'分'+Differ[5]+'秒';
+			}
+		};
+	</script>
+	
+</body>
+</html>
