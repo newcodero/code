@@ -119,4 +119,7 @@ m 执行多行匹配
     https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 8,Data对象
     http://www.w3school.com.cn/jsref/jsref_obj_date.asp
+    关于HTMLElement.dataset属性:https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset
+9,js对象
+    Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
 
