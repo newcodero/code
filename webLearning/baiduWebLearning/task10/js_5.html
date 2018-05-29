@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title> 倒数开始 滴答滴 滴答滴</title>
+</head>
+
+<body>
+	<p id="date-result1" data-format="YYYY 年 MM 月 DD 日 星期ww HH:mm:ss"></p>
+	<p id="date-result2" data-format="YYYY-MM-DD WW hh:mm:ss md"></p>
+	<select id="year-select">
+	</select><span>年</span>
+	
+	<select id="month-select">
+	</select><span>月</span>
+	
+	<select id="day-select">
+	<option>1</option>
+	</select><span>日</span>
+	
+	<select id="hour-select">       
+	</select><span>时</span>
+	
+	<select id="minute-select">
+	</select><span>分</span>
+	<select id="second-select">
+	</select><span>秒</span>
+	<p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+<script>
+	function Go() {
+		console.log("Go");
+	}
+	
+	function GoSteps(n) {
+		
+		if(n>0&&n<=1||n===undefined){
+			Go();
+		}else if(n>1){
+			n=Math.floor(n)
+			while(n--){
+				Go();
+			};
+		}else{
+			return 0;
+		}
+	}
+	/*GoSteps(10);//  Go 10次
+	GoSteps(1); // Go 1次
+	GoSteps(); // Go 1次，认为缺少参数时，默认参数为1
+	GoSteps(0)  // 0次
+	GoSteps(-1);  // 0次
+	GoSteps(1.4);  // Go 1次
+	GoSteps(1.6);  // Go 1次
+	GoSteps(-1);  // 0次
+	GoSteps(true);  // Go 1次
+    GoSteps(false)  // 0次
+	GoSteps("Test");  // 0次
+	GoSteps(NaN);  // 0次
+	GoSteps(null);  // 0次*/
+	
+	
+	//任务2
+	var dateResult1=document.querySelector('#date-result1');
+	var dateResult2=document.querySelector('#date-result2');
+	var format1=dateResult1.dataset.format;
+	var format2=dateResult2.dataset.format;
+	
+	
+	//数字位数
+	var numCover=function(num){
+		return num>=10?num:'0'+num;
+	};
+	//星期格式
+	var week=['日','一','二','三','四','五','六'];
+	var weekEn=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	var getWeek=function(date){
+		return {
+			ww:week[date.getDay()],
+			WW:weekEn[date.getDay()]
+		}
+	};
+	//小时格式
+	var getHour=function(date){
+		var hour=numCover(date.getHours());
+		return {
+			HH:hour,
+			hh:numCover(hour<=12?hour:hour-12),
+			md:hour<=12?'AM':'PM'
+		}
+	};
+	var getFormat=function(date,format){
+		var obj={//把时间存储在obj对象中
+			YYYY:date.getFullYear(),
+			MM:numCover(date.getMonth()+1),
+			DD:numCover(date.getDate()),
+			mm:numCover(date.getMinutes()),
+			ss:numCover(date.getSeconds()),
+		};
+		//添加星期
+		Object.assign(obj,getWeek(date));
+		//添加小时
+		Object.assign(obj,getHour(date));
+		var str=format;
+		for(var x in obj){
+			if(format.indexOf(x)!==-1){
+				str=str.replace(x,obj[x]);
+			};
+		};
+		return str;
+	};
+	var runTime=function(){
+		var date=new Date();
+		dateResult1.innerHTML=getFormat(date,format1);
+		dateResult2.innerHTML=getFormat(date,format2);
+	};
+	runTime();//初次加载
+	setInterval(runTime,1000);
+	
+		//任务3
+		
+		var yearSelector=document.querySelector('#year-select');
+		var monthSelector=document.querySelector('#month-select');
+		var daySelector=document.querySelector('#day-select');
+		var hourSelector=document.querySelector('#hour-select');
+		var minuteSelector=document.querySelector('#minute-select');
+		var secondSelector=document.querySelector('#second-select');
+		var resultWrapper=document.querySelector('#result-wrapper');
+		var selectors=document.querySelectorAll("select");
+		for(var i=0;i<32;i++){//添加年份
+			var opt=document.createElement('option');
+			opt.innerHTML=i+2000;
+			yearSelector.appendChild(opt);
+		};
+		for(var i=1;i<13;i++){//添加月份
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			monthSelector.appendChild(opt);
+		};
+		for(var i=0;i<24;i++){//添加小时
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			hourSelector.appendChild(opt);
+		}
+		for(var i=0;i<61;i++){//添加分钟
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			minuteSelector.appendChild(opt);
+		}
+		for(var i=0;i<61;i++){//添加秒
+			var opt=document.createElement('option');
+			opt.innerHTML=i;
+			secondSelector.appendChild(opt);
+		};	
+		
+		function change(){//添加各个月的天数
+			if(true){
+				var monValue=monthSelector.value;
+				daySelector.innerHTML='';
+				if(monValue==1||monValue==3||monValue==5||monValue==7||monValue==8||monValue==10||monValue==12){
+					for(var i=1;i<32;i++){//31天的月份
+						var opt=document.createElement('option');
+						opt.innerHTML=i;
+						daySelector.appendChild(opt);
+					};
+				};
+				if(monValue==4||monValue==6||monValue==9||monValue==11){
+					for(var i=1;i<31;i++){//30天的月份
+						var opt=document.createElement('option');
+						opt.innerHTML=i;
+						daySelector.appendChild(opt);
+					};
+				};
+				if(monValue==2){//二月份单独算
+					var yearValue=yearSelector.value;
+					if(yearValue%400==0||(yearValue%100!==0&&yearValue%4==0)){
+						for(var i=1;i<30;i++){
+							var opt=document.createElement('option');
+							opt.innerHTML=i;
+							daySelector.appendChild(opt);
+						}
+					}else{
+						for(var i=1;i<29;i++){
+							var opt=document.createElement('option');
+							opt.innerHTML=i;
+							daySelector.appendChild(opt);
+						}
+					};
+				};
+			};
+			showResult();
+		};
+		for(var i=0;i<selectors.length;i++){//选择改变时触发事件
+			if(i==0||i==1){
+				selectors[i].onchange=change;
+			}else{
+				selectors[i].onchange=showResult;
+			};
+		};
+		
+		function showResult(){
+			
+			var dateArr=yearSelector.value+'-'+monthSelector.value+'-'+daySelector.value+' '+hourSelector.value+':'+minuteSelector.value+':'+secondSelector.value;
+			//获取当前所选时间
+			var newDateArr=new Date(dateArr);
+			var date=new Date();//获取当前时间
+			var diff=date.getTime()/1000-newDateArr.getTime()/1000;//计算两者相差的秒数
+			var connetText=diff>0?'已经过去':'还有';
+			if(diff<0){
+				diff=Math.abs(diff);
+			};
+			var diffDay=parseInt(diff/86400,10);//一天86400秒
+			diff=diff%86400;
+			var diffHours=parseInt(diff/3600,10);//一小时3600秒
+			diff=diff%3600;
+			var diffMinute=parseInt(diff/60,10);//一分60秒
+			diff=diff%60;	
+			var diffSecond=parseInt(diff,10);
+			resultWrapper.innerHTML = '现在距离所选时间' + connetText + diffDay + ' 天 ' + diffHours + ' 小时 ' + diffMinute + ' 分 ' + diffSecond + ' 秒';
+		};
+		
+		
+	</script>
+	
+</body>
+</html>
