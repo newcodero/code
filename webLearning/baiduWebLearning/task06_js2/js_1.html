@@ -1,13 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>jsÑ§Ï°µÚÒ»¿Î</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jså­¦ä¹ ç¬¬ä¸€è¯¾</title>
 </head>
 
 <body>
 
-	<!--Á·Ï°1-->
+	<!--ç»ƒä¹ 1-->
 	<!--<h1>Demo</h1>
     <p id="content-wrapper">Hello World</p>
     <script>
@@ -16,11 +16,11 @@
 	
 	
 	
-	<!--Á·Ï°2-->
+	<!--ç»ƒä¹ 2-->
 	<!--<h1>Demo</h1>
-    <p id="content-wrapper">ÄãÊÇË­£¿</p>
-    <input id="name-input" type="text" placeholder="ÊäÈëÄãµÄÃû×Ö">
-    <button id="send-btn">·¢ËÍ</button>
+    <p id="content-wrapper">ä½ æ˜¯è°ï¼Ÿ</p>
+    <input id="name-input" type="text" placeholder="è¾“å…¥ä½ çš„åå­—">
+    <button id="send-btn">å‘é€</button>
     <script>        
         document.getElementById("send-btn").onclick = function() {
             document.getElementById("content-wrapper").innerHTML = 'Hello ' + document.getElementById("name-input").value;
@@ -29,14 +29,14 @@
 	
 	
 	
-	<!--Á·Ï°3£¬Á½¸öÊı×ÖµÄ¼Ó¼õ³Ë³ı-->
-	<!--<input id="first-number" type="number" value="0" placeholder="µÚÒ»¸öÊı×Ö">
-    <input id="second-number" type="number" value="0" placeholder="µÚ¶ş¸öÊı×Ö">
-    <button id="add-btn">¼Ó</button>
-    <button id="minus-btn">¼õ</button>
-    <button id="times-btn">³Ë</button>
-    <button id="divide-btn">³ı</button>
-    <p id="result">ÔËËã½á¹û</p>
+	<!--ç»ƒä¹ 3ï¼Œä¸¤ä¸ªæ•°å­—çš„åŠ å‡ä¹˜é™¤-->
+	<!--<input id="first-number" type="number" value="0" placeholder="ç¬¬ä¸€ä¸ªæ•°å­—">
+    <input id="second-number" type="number" value="0" placeholder="ç¬¬äºŒä¸ªæ•°å­—">
+    <button id="add-btn">åŠ </button>
+    <button id="minus-btn">å‡</button>
+    <button id="times-btn">ä¹˜</button>
+    <button id="divide-btn">é™¤</button>
+    <p id="result">è¿ç®—ç»“æœ</p>
     <script>
 		
 		document.getElementById("add-btn").onclick=function(){
@@ -50,7 +50,7 @@
 		}
 		document.getElementById("divide-btn").onclick=function(){
 			if(parseFloat(document.getElementById("second-number").value)===0){
-				document.getElementById("result").innerHTML="³ıÊı²»ÄÜÎª0£¡³ıÊıÇëÊäÈëÒ»¸ö·Ç0Êı×Ö£¡";
+				document.getElementById("result").innerHTML="é™¤æ•°ä¸èƒ½ä¸º0ï¼é™¤æ•°è¯·è¾“å…¥ä¸€ä¸ªé0æ•°å­—ï¼";
 			}else{
 			document.getElementById("result").innerHTML=parseFloat(document.getElementById("first-number").value)/parseFloat(document.getElementById("second-number").value);
 		}
@@ -58,15 +58,15 @@
     </script>-->
 	
 	
-	<!--Á·Ï°4£¬ÊµÏÖÊ®½øÖÆ×ª»»Îª¶ş½øÖÆ-->
-	<!-- <input id="dec-number" type="number" placeholder="ÊäÈëÒ»¸öÊ®½øÖÆ·Ç¸ºÕûÊı">
-	  <input id="bin-bit" type="number" placeholder="ÊäÈë×ª»¯ºó¶ş½øÖÆÊı×ÖÎ»Êı">
-    <button id="trans-btn">×ª»¯Îª¶ş½øÖÆ</button>
-    <p id="result1">ÔËËã½á¹û</p>
+	<!--ç»ƒä¹ 4ï¼Œå®ç°åè¿›åˆ¶è½¬æ¢ä¸ºäºŒè¿›åˆ¶-->
+	<!-- <input id="dec-number" type="number" placeholder="è¾“å…¥ä¸€ä¸ªåè¿›åˆ¶éè´Ÿæ•´æ•°">
+	  <input id="bin-bit" type="number" placeholder="è¾“å…¥è½¬åŒ–åäºŒè¿›åˆ¶æ•°å­—ä½æ•°">
+    <button id="trans-btn">è½¬åŒ–ä¸ºäºŒè¿›åˆ¶</button>
+    <p id="result1">è¿ç®—ç»“æœ</p>
     <script>
 		document.getElementById("trans-btn").addEventListener("click",function(){dec2bin();});
 		function dec2bin() {
-			// ÔÚÕâÀïÊµÏÖÄãµÄ×ª»¯·½·¨£¬×¢ÒâĞèÒªÅĞ¶ÏÊäÈë±ØĞëÎªÒ»¸ö·Ç¸ºÕûÊı	
+			// åœ¨è¿™é‡Œå®ç°ä½ çš„è½¬åŒ–æ–¹æ³•ï¼Œæ³¨æ„éœ€è¦åˆ¤æ–­è¾“å…¥å¿…é¡»ä¸ºä¸€ä¸ªéè´Ÿæ•´æ•°	
 			var decNumber=document.getElementById("dec-number").value;	
 			var binBit=document.getElementById("bin-bit").value;	
 			var num=parseInt(decNumber);
@@ -85,21 +85,21 @@
 					}	
 				document.getElementById("result1").innerHTML=result.concat(zerosNum).reverse().join("");
 				}else{
-					console.log("×ª»»ºóµÄÎ»Êı²»ÄÜĞ¡ÓÚÊµ¼ÊµÄÎ»Êı");
+					console.log("è½¬æ¢åçš„ä½æ•°ä¸èƒ½å°äºå®é™…çš„ä½æ•°");
 					document.getElementById("result1").innerHTML=result.reverse().join("");
 				}
 			}else{
-				document.getElementById("result1").innerHTML="ÇëÊäÈëÒ»¸ö·Ç¸ºÕûÊı";
+				document.getElementById("result1").innerHTML="è¯·è¾“å…¥ä¸€ä¸ªéè´Ÿæ•´æ•°";
 			}
 		};
     </script>-->
 	
 	
 	
-	<!--Á·Ï°5
-	3µÄĞ¡ÓÎÏ·£¬Á·Ï°Ê¹ÓÃÑ­»·ºÍÌõ¼şÓï¾ä£¬ÊµÏÖÈçÏÂĞèÇó£º
-	´Ó1µ½100£¬ÒÔ´ËÔÚconsoleÊä³ö¸÷Êı×Ö£¬µ«ÊÇ£¬µ±Êı×ÖÎª3µÄ±¶Êı»òÕßº¬ÓĞ3µÄÊ±ºò£¬Êä³ö¡°PA¡±
-	±ÈÈç£º1,2,PA,4,5,PA,¡­¡­,11,PA,PA,14,PA¡­¡­-->
+	<!--ç»ƒä¹ 5
+	3çš„å°æ¸¸æˆï¼Œç»ƒä¹ ä½¿ç”¨å¾ªç¯å’Œæ¡ä»¶è¯­å¥ï¼Œå®ç°å¦‚ä¸‹éœ€æ±‚ï¼š
+	ä»1åˆ°100ï¼Œä»¥æ­¤åœ¨consoleè¾“å‡ºå„æ•°å­—ï¼Œä½†æ˜¯ï¼Œå½“æ•°å­—ä¸º3çš„å€æ•°æˆ–è€…å«æœ‰3çš„æ—¶å€™ï¼Œè¾“å‡ºâ€œPAâ€
+	æ¯”å¦‚ï¼š1,2,PA,4,5,PA,â€¦â€¦,11,PA,PA,14,PAâ€¦â€¦-->
 	<!--	<script>
 		var numbers=[];
 		for(var i=1;i<=100;i++){
@@ -116,9 +116,9 @@
 	
 	
 	
-	<!--Á·Ï°6£¬
-	µÚÒ»²½£¬×îµÍÒªÇó£ºÔÚConsoleÖĞ°´ĞĞÊä³ö n * m = t
-	È»ºó£¬³¢ÊÔÔÚÍøÒ³ÖĞ£¬Ê¹ÓÃtableÀ´ÊµÏÖÒ»¸ö¾Å¾Å³Ë·¨±í-->
+	<!--ç»ƒä¹ 6ï¼Œ
+	ç¬¬ä¸€æ­¥ï¼Œæœ€ä½è¦æ±‚ï¼šåœ¨Consoleä¸­æŒ‰è¡Œè¾“å‡º n * m = t
+	ç„¶åï¼Œå°è¯•åœ¨ç½‘é¡µä¸­ï¼Œä½¿ç”¨tableæ¥å®ç°ä¸€ä¸ªä¹ä¹ä¹˜æ³•è¡¨-->
 <!--	<table id="tab">
 		<td><tr></tr></td>
 		<td><tr></tr><tr></tr></td>
