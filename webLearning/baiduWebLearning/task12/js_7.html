@@ -2,93 +2,99 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎÒÊÇ¾«Ã÷µÄĞ¡Âô¼Ò£¨Ò»£©</title>
+<title>æˆ‘æ˜¯ç²¾æ˜çš„å°å–å®¶ï¼ˆä¸€ï¼‰</title>
 <style>
-	#div-show thead td{
+	#div-show thead td,#tbody-show tr th{
 		border:1px solid #CCCCCC;
 		width:50px;
-		height:50px;
+		height:40px;
 		text-align:center;
 		line-height:50px;
+	}
+	#tbody-show tr th:nth-child(1),#tbody-show tr th:nth-child(2),#div-show tr th:nth-child(1),#div-show tr th:nth-child(2){
+		width:100px;
+	}
+	#data-show,#form-show{
+		margin-bottom:30px;
+	};
+	
+	table{
+		border-collapse:collapse;
 	}
 </style>
 </head>
 
 <body>
 	<div id="select-region">
-		Ñ¡Ôñ²éÑ¯µÄÇøÓò£º 
-		<label><input name="region" type="checkbox" value="" checked="checked" disabled="disabled"/>»ª¶«</label>
-		<label><input name="region" type="checkbox" value="" />»ªÄÏ</label>
-		<label><input name="region" type="checkbox" value="" />»ª±±</label>
-		<label><input name="region" type="checkbox" value="" />È«Ñ¡</label>
+		é€‰æ‹©æŸ¥è¯¢çš„åŒºåŸŸï¼š 
+		<label><input name="region" type="checkbox" value="" checked="checked" disabled="disabled"/>åä¸œ</label>
+		<label><input name="region" type="checkbox" value="" />åå—</label>
+		<label><input name="region" type="checkbox" value="" />ååŒ—</label>
+		<label><input name="region" type="checkbox" value="" />å…¨é€‰</label>
 	</div>
 	<div id="select-product">
-		Ñ¡Ôñ²éÑ¯µÄÉÌÆ·£º 
-		<label><input name="region" type="checkbox" value="" checked="checked" disabled="disabled"/>ÊÖ»ú</label>
-		<label><input name="region" type="checkbox" value="" />±Ê¼Ç±¾</label>
-		<label><input name="region" type="checkbox" value="" />ÖÇÄÜÒôÏä</label>
-		<label><input name="region" type="checkbox" value="" />È«Ñ¡</label>
+		é€‰æ‹©æŸ¥è¯¢çš„å•†å“ï¼š 
+		<label><input name="region" type="checkbox" value="" checked="checked" disabled="disabled"/>æ‰‹æœº</label>
+		<label><input name="region" type="checkbox" value="" />ç¬”è®°æœ¬</label>
+		<label><input name="region" type="checkbox" value="" />æ™ºèƒ½éŸ³ç®±</label>
+		<label><input name="region" type="checkbox" value="" />å…¨é€‰</label>
 	</div>
-	<div id='data-show'>
-		<p>ÊÖ»ú »ª¶« 120,100,140,160,180,185,190,210,230,245,255,270</p>
-	</div>
-	<div>
+
+	<div id='form-show'><strong>è¡¨æ ¼æ˜¾ç¤º</strong><button type="button" id="btn1">æ˜¾ç¤º/éšè—</button>
 		<table id='div-show'>
 			<thead>
 				<tr>
-					<td>²úÆ·</td><td>µØÇø</td><td>1ÔÂ</td><td>2ÔÂ</td>
-					<td>3ÔÂ</td><td>4ÔÂ</td><td>5ÔÂ</td><td>6ÔÂ</td>
-					<td>7ÔÂ</td><td>8ÔÂ</td><td>9ÔÂ</td><td>10ÔÂ</td>
-					<td>11ÔÂ</td><td>12ÔÂ</td>
+					<td>äº§å“</td><td>åœ°åŒº</td><td>1æœˆ</td><td>2æœˆ</td>
+					<td>3æœˆ</td><td>4æœˆ</td><td>5æœˆ</td><td>6æœˆ</td>
+					<td>7æœˆ</td><td>8æœˆ</td><td>9æœˆ</td><td>10æœˆ</td>
+					<td>11æœˆ</td><td>12æœˆ</td>
 				</tr>
 			</thead>
 			<tbody id='tbody-show'>
-				<tr>
-					<th>ÊÖ»ú</th><th>»ª¶«</th><th>120</th><th>100</th>
-					<th>140</th><th>160</th><th>180</th><th>185</th>
-					<th>190</th><th>210</th><th>230</th><th>245</th>
-					<th>255</th><th>270</th>
-				</tr>
 			</tbody>
 		</table>
+	</div>
+	<strong>æ•°æ®æ˜¾ç¤º</strong><button type="button" id="btn2">æ˜¾ç¤º/éšè—</button>
+	<div id='data-show'>
+		<p>æ‰‹æœº åä¸œ 120,100,140,160,180,185,190,210,230,245,255,270</p>
 	</div>
 <script>
 	let sourceData = [
 		{
-		product: "ÊÖ»ú",
-		region: "»ª¶«",
+		product: "æ‰‹æœº",
+		region: "åä¸œ",
 		sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
 		}, {
-		product: "ÊÖ»ú",
-		region: "»ª±±",
+		product: "æ‰‹æœº",
+		region: "ååŒ—",
 		sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
 		}, {
-		product: "ÊÖ»ú",
-		region: "»ªÄÏ",
+		product: "æ‰‹æœº",
+		region: "åå—",
 		sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
 		}, {
-		product: "±Ê¼Ç±¾",
-		region: "»ª¶«",
+		product: "ç¬”è®°æœ¬",
+		region: "åä¸œ",
 		sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
 		}, {
-		product: "±Ê¼Ç±¾",
-		region: "»ª±±",
+		product: "ç¬”è®°æœ¬",
+		region: "ååŒ—",
 		sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
 		}, {
-		product: "±Ê¼Ç±¾",
-		region: "»ªÄÏ",
+		product: "ç¬”è®°æœ¬",
+		region: "åå—",
 		sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
 		}, {
-		product: "ÖÇÄÜÒôÏä",
-		region: "»ª¶«",
+		product: "æ™ºèƒ½éŸ³ç®±",
+		region: "åä¸œ",
 		sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
 		}, {
-		product: "ÖÇÄÜÒôÏä",
-		region: "»ª±±",
+		product: "æ™ºèƒ½éŸ³ç®±",
+		region: "ååŒ—",
 		sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
 		}, {
-		product: "ÖÇÄÜÒôÏä",
-		region: "»ªÄÏ",
+		product: "æ™ºèƒ½éŸ³ç®±",
+		region: "åå—",
 		sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
 	}];
 	var selectRegions=document.querySelectorAll('#select-region input');
@@ -99,15 +105,34 @@
 	var divShow=document.querySelector('#div-show');
 	var trs=document.querySelectorAll('#tbody-show tr');
 	var tbodyShow=document.querySelectorAll('#tbody-show');
-	
+	var l=document.querySelector('#div-show thead tr');
+	var btn1=document.querySelector('#btn1');
+	var btn2=document.querySelector('#btn2');
+	//
+	divShow.style.display='block';
+	dataShow.style.display='block';
+	btn1.onclick=function(){
+		if(divShow.style.display=='none'){
+			divShow.style.display='block';
+		}else{
+			divShow.style.display='none';
+		};
+	};
+	btn2.onclick=function(){
+		if(dataShow.style.display=='none'){
+			dataShow.style.display='block';
+		}else{
+			dataShow.style.display='none';
+		};
+	};
 	//
 	var regionArr1=new Array();
 	var regionArr2=new Array();
 	var regionArr3=new Array();
-	for(let i=0;i<sourceData.length;i++){//¸ù¾İµØÇø·ÖÎªÈı×éÊı¾İ
-		if(sourceData[i].region=='»ª¶«'){
+	for(let i=0;i<sourceData.length;i++){//æ ¹æ®åœ°åŒºåˆ†ä¸ºä¸‰ç»„æ•°æ®
+		if(sourceData[i].region=='åä¸œ'){
 			regionArr1.push(sourceData[i]);
-		}else if(sourceData[i].region=='»ªÄÏ'){
+		}else if(sourceData[i].region=='åå—'){
 			regionArr2.push(sourceData[i]);
 		}else{
 			regionArr3.push(sourceData[i]);
@@ -123,15 +148,15 @@
 	var sale2=[];
 	var sale3=[];
 	for(let j=0;j<regionArr1.length;j++){
-			sale1.push(regionArr1[j].sale);
-			sale2.push(regionArr2[j].sale);
-			sale3.push(regionArr3[j].sale);
+		sale1.push(regionArr1[j].sale);
+		sale2.push(regionArr2[j].sale);
+		sale3.push(regionArr3[j].sale);
 	};
 
 
 	
-	//checked ²¿·Ö
-	for(let i=0;i<selectRegions.length;i++){//´´½¨Î¯ÍĞÊÂ¼ş
+	//checked éƒ¨åˆ†
+	for(let i=0;i<selectRegions.length;i++){//åˆ›å»ºå§”æ‰˜äº‹ä»¶
 		if(i==selectRegions.length-1){
 			selectRegions[i].addEventListener('click',function(){
 				allChecked();
@@ -156,8 +181,8 @@
 			});
 		}
 	};
-	function allChecked(){//È«Ñ¡°´Å¥´¥·¢ÊÂ¼ş
-		if(selectRegions[3].checked){//µã»÷È«Ñ¡°´Å¥£¬ËùÓĞÑ¡Ïî±»Ñ¡ÖĞ
+	function allChecked(){//å…¨é€‰æŒ‰é’®è§¦å‘äº‹ä»¶
+		if(selectRegions[3].checked){//ç‚¹å‡»å…¨é€‰æŒ‰é’®ï¼Œæ‰€æœ‰é€‰é¡¹è¢«é€‰ä¸­
 			for(let i=0;i<selectRegions.length-1;i++){
 				selectRegions[i].checked=true;
 			};
@@ -172,7 +197,7 @@
 			
 		};
 	};
-	function unChecked(){//¸ù¾İ¹´Ñ¡µÄ¸öÊı¾ö¶¨È«Ñ¡¸´Ñ¡¿òÊÇ·ñÑ¡ÖĞ
+	function unChecked(){//æ ¹æ®å‹¾é€‰çš„ä¸ªæ•°å†³å®šå…¨é€‰å¤é€‰æ¡†æ˜¯å¦é€‰ä¸­
 		let index=0;
 		let index1=0;
 		for(let i=0;i<selectProducts.length-1;i++){
@@ -187,13 +212,13 @@
 				var n=i;
 			};
 		};
-		if(index==1){//Ö»ÓĞÒ»¸öÑ¡ÖĞÊ±²»ÔÊĞíÈ¡Ïû
+		if(index==1){//åªæœ‰ä¸€ä¸ªé€‰ä¸­æ—¶ä¸å…è®¸å–æ¶ˆ
 			selectProducts[m].disabled=true;
 		};
 		if(index1==1){
 			selectRegions[n].disabled=true;
 		};
-		if(index!==3){//Ö»ÓĞÈ«²¿Ñ¡ÖĞ£¬È«Ñ¡¿ò²ÅÑ¡ÖĞ
+		if(index!==3){//åªæœ‰å…¨éƒ¨é€‰ä¸­ï¼Œå…¨é€‰æ¡†æ‰é€‰ä¸­
 			selectProducts[3].checked=false;
 		}else{
 			selectProducts[3].checked=true;
@@ -206,8 +231,8 @@
 	};
 	
 	
-	//Ìí¼Ó±í¸ñÄÚÈİ
-	function allShow(){//È«Ñ¡¿ò¶¼Ñ¡ÖĞÊ±£¬ÏÔÊ¾È«²¿ÄÚÈİ
+	//æ·»åŠ è¡¨æ ¼å†…å®¹
+	function allShow(){//å…¨é€‰æ¡†éƒ½é€‰ä¸­æ—¶ï¼Œæ˜¾ç¤ºå…¨éƒ¨å†…å®¹
 		dataShow.innerHTML='';
 		var trs=document.querySelectorAll('#tbody-show tr');
 		var tbodyShow=document.getElementById('tbody-show');
@@ -220,7 +245,7 @@
 		for(let i in objArr){
 			for(let j=0;j<regionArr1.length;j++){
 				let p=document.createElement('p');
-				p.innerHTML=objArr[i][j].product+' '+objArr[i][j].region+' '+objArr[i][j].sale;//Êı¾İÏÔÊ¾
+				p.innerHTML=objArr[i][j].product+' '+objArr[i][j].region+' '+objArr[i][j].sale;//æ•°æ®æ˜¾ç¤º
 				dataShow.appendChild(p);
 				let tr=document.createElement('tr');
 				tbodyShow.appendChild(tr);
@@ -230,7 +255,7 @@
 					let th=document.createElement('th');
 					trs[q].appendChild(th);
 				};
-				trs[q].children[0].innerHTML=objArr[i][j].product;//±í¸ñÏÔÊ¾
+				trs[q].children[0].innerHTML=objArr[i][j].product;//è¡¨æ ¼æ˜¾ç¤º
 				trs[q].children[1].innerHTML=objArr[i][j].region;
 				for(let k=2;k<14;k++){
 					trs[q].children[k].innerHTML=objArr[i][j].sale[k-2];	
@@ -249,26 +274,55 @@
 		};
 		return q;
 	};
-	//²»Í¬¸´Ñ¡¿òÏÔÊ¾²»Í¬µÄÄÚÈİ
+	//ä¸åŒå¤é€‰æ¡†æ˜¾ç¤ºä¸åŒçš„å†…å®¹
+	function checkedNum(){
+		let regionNum=0;
+		let productNum=0;
+		for(let i=0;i<selectRegions.length-1;i++){
+			if(selectRegions[i].checked){
+				regionNum++;
+			}
+		};
+		for(let j=0;j<selectProducts.length-1;j++){
+			if(selectProducts[j].checked){
+				productNum++;
+			}
+		};
+		return [regionNum,productNum];
+	};
+	function addtext(){
+		let tr=document.createElement('tr');
+		tbodyShow.appendChild(tr);
+		let trs=document.querySelectorAll('#tbody-show tr');
+		for(let x=0;x<14;x++){
+			let th=document.createElement('th');
+			trs[trs.length-1].appendChild(th);
+		};
+		for(let k=2;k<14;k++){
+			trs[trs.length-1].children[k].innerHTML=objArr[i][j].sale[k-2];	
+		};
+		return trs;
+	};
 	function textShow(){
+		let num=checkedNum();
 		for(let i=0;i<selectRegions.length-1;i++){
 			for(let j=0;j<selectProducts.length-1;j++){
 				let dataP=document.querySelectorAll('#data-show p');
 				let inner=objArr[i][j].product+' '+objArr[i][j].region+' '+objArr[i][j].sale;
 				let trs=document.querySelectorAll('#tbody-show tr');
 				let tbodyShow=document.getElementById('tbody-show');
-				if(selectRegions[i].checked){//ÇøÓòÑ¡ÖĞ
+				if(selectRegions[i].checked){//åŒºåŸŸé€‰ä¸­
 					let str=dataShow.innerHTML;
 					let ind=str.indexOf(inner);
 					let q=regionsNum(i,j);
-					if(selectProducts[j].checked){//ÉÌÆ·Ñ¡ÖĞÊ±ÏÔÊ¾
-						if(ind==-1){//Êı¾İÏÔÊ¾
+					if(selectProducts[j].checked){//å•†å“é€‰ä¸­æ—¶æ˜¾ç¤º
+						if(ind==-1){//æ•°æ®æ˜¾ç¤º
 							let p=document.createElement('p');
 							p.innerHTML=inner;
 							dataShow.appendChild(p);
 						}; 
 						let index=0;
-						for(let k=0;k<trs.length;k++){//±í¸ñÏÔÊ¾
+						for(let k=0;k<trs.length;k++){//è¡¨æ ¼æ˜¾ç¤º
 						    let innerSale0=objArr[i][j].sale
 							let innerSale=innerSale0.join('');
 							let trsText=trs[k].innerText.replace(/\s/g,'')
@@ -276,50 +330,83 @@
 								index++;
 							};
 						};
-						if(index==trs.length){
-							let tr=document.createElement('tr');
-							tbodyShow.appendChild(tr);
-							let trs=document.querySelectorAll('#tbody-show tr');
-							for(let x=0;x<14;x++){
-								let th=document.createElement('th');
-								trs[trs.length-1].appendChild(th);
-							};
-							trs[trs.length-1].children[0].innerHTML=objArr[i][j].product;
-							trs[trs.length-1].children[1].innerHTML=objArr[i][j].region;
-							for(let k=2;k<14;k++){
-								trs[trs.length-1].children[k].innerHTML=objArr[i][j].sale[k-2];	
-							};
+						if(index==trs.length){//è‹¥åŸæ¥ä¸å­˜åœ¨è¯¥ä¿¡æ¯åˆ™æ·»åŠ 
+								let tr=document.createElement('tr');
+								tbodyShow.appendChild(tr);
+								let trs=document.querySelectorAll('#tbody-show tr');
+								for(let x=0;x<14;x++){
+									let th=document.createElement('th');
+									trs[trs.length-1].appendChild(th);
+								};
+								trs[trs.length-1].children[0].innerHTML=objArr[i][j].product;
+								trs[trs.length-1].children[1].innerHTML=objArr[i][j].region;
+								for(let k=2;k<14;k++){
+									trs[trs.length-1].children[k].innerHTML=objArr[i][j].sale[k-2];	
+								};
+							
+							
 						};
-					}else{//ÉÌÆ·Ã»ÓĞÑ¡ÖĞÊ±É¾³ıÉÌÆ·ĞÅÏ¢
+					}else{//å•†å“æ²¡æœ‰é€‰ä¸­æ—¶åˆ é™¤å•†å“ä¿¡æ¯
+						let trs=document.querySelectorAll('#tbody-show tr');
 						for(let k=0;k<dataP.length;k++){
 							if(dataP[k].innerHTML.indexOf(inner)!==-1){
 								dataShow.removeChild(dataP[k]);
 							};
 						};
-						
 						for(let k=0;k<trs.length;k++){
-						if((trs[k].children[0].innerHTML==objArr[i][j].product)&&(trs[k].children[1].innerHTML==objArr[i][j].region)){
-							tbodyShow.removeChild(trs[k]);
-						};
+							let a=trs[k].children[0].innerHTML;
+							let b=trs[k].children[1].innerHTML;
+							let c=objArr[i][j].region;
+							let d=objArr[i][j].product;
+							if(((a==c)&&(b==d))||((a==d)&&(b==c))){
+								tbodyShow.removeChild(trs[k]);
+							};
+						};						
 					};
-					};
-				}else{//ÇøÓòÃ»ÓĞÑ¡ÖĞÊ±É¾³ıÉÌÆ·ĞÅÏ¢
+				}else{//åŒºåŸŸæ²¡æœ‰é€‰ä¸­æ—¶åˆ é™¤å•†å“ä¿¡æ¯
 					for(let k=0;k<dataP.length;k++){
 						if(dataP[k].innerHTML.indexOf(inner)!==-1){
 							dataShow.removeChild(dataP[k]);
 						};
 					};
-				
+					let trs=document.querySelectorAll('#tbody-show tr');
 					for(let k=0;k<trs.length;k++){
-						if(trs[k].children[1].innerHTML==objArr[i][j].region){
+						let a=trs[k].children[0].innerHTML;
+						let b=trs[k].children[1].innerHTML;
+						if((a==objArr[i][j].region)||(b==objArr[i][j].region)){
 							tbodyShow.removeChild(trs[k]);
 						};
-					};
-					
+					};	
 				};
 				
 			};
 			
+		};
+		let trs=document.querySelectorAll('#tbody-show tr');
+		if((num[0]==1)&&(num[1]>1)){
+			for(let k=0;k<trs.length;k++){
+				if(trs[k]){
+					let inn=trs[k].children[0].innerHTML;
+					if(inn=='æ‰‹æœº'||inn=='ç¬”è®°æœ¬'||inn=='æ™ºèƒ½éŸ³ç®±'){
+						trs[k].children[0].innerHTML=trs[k].children[1].innerHTML;
+						trs[k].children[1].innerHTML=inn;
+						l.children[0].innerHTML='åŒºåŸŸ';
+						l.children[1].innerHTML='äº§å“';
+					};
+				};
+			};
+		}else{
+			for(let k=0;k<trs.length;k++){
+				if(trs[k]){
+					let inn=trs[k].children[0].innerHTML;
+					if(inn=='åä¸œ'||inn=='åå—'||inn=='ååŒ—'){
+						trs[k].children[0].innerHTML=trs[k].children[1].innerHTML;
+						trs[k].children[1].innerHTML=inn;
+						l.children[0].innerHTML='äº§å“';
+						l.children[1].innerHTML='åŒºåŸŸ';
+					};
+				};
+			};
 		};
 	};
 </script>
