@@ -1,6 +1,12 @@
 此路径用于百度web前端技术学院的任务学习<br>
 ========
 链接：http://ife.baidu.com/<br>
+task01<br>
+-----
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task01/resume.html)<br>
+task02<br>
+-----
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task02/layout.html)<br>
 task03<br>
 -----
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task03/project_train_1.html)<br>
