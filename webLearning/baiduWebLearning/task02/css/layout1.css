@@ -1,0 +1,15 @@
+/* CSS Document */
+.leftbox{
+float:left;
+width:30%;
+height:100px;
+background-color:#0099CC;
+}
+.rightbox{
+float:left;
+position:relative;
+background-color:#3399FF;
+width:70%;
+height:100px;}
+
+
