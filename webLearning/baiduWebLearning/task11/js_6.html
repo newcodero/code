@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>¸ø°®µÄÈË·¢¸öÓÊ¼ş°É</title>
+<title>ç»™çˆ±çš„äººå‘ä¸ªé‚®ä»¶å§</title>
 <style>
 	ul{
 		list-style:none;
@@ -10,7 +10,7 @@
 		width:150px;
 	}
 	ul li:hover{
-		background-color: #CCCCCC;
+		background-color: #FFFFCC !important;
 	}
 </style>	
 </head>
@@ -24,25 +24,25 @@
 	var emailInput=document.querySelector('#email-input');
 	var emailSugWrapper=document.querySelector('#email-sug-wrapper');
 	var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
-	emailInput.focus();//¼ÓÔØÊ±ÊäÈë¿ò×Ô¶¯»ñÈ¡½¹µã
+	emailInput.focus();//åŠ è½½æ—¶è¾“å…¥æ¡†è‡ªåŠ¨è·å–ç„¦ç‚¹
 	emailInput.addEventListener('input',addLi);
-	function addLi(){//¼àÌıÊÂ¼ş
+	function addLi(){//ç›‘å¬äº‹ä»¶
 		var emailSugWrapper=document.querySelector('#email-sug-wrapper');
 		if(emailInput.value!==''){
 			emailSugWrapper.style.display='block';
-			getText();//»ñÈ¡ÓÃ»§ÊäÈë
-			showText();//ÏÔÊ¾ÌáÊ¾¿ò
-			showToInput();//½«ËùÑ¡ÌáÊ¾¿òÄÚÈİÌí¼Óµ½input¿ò
+			getText();//è·å–ç”¨æˆ·è¾“å…¥
+			showText();//æ˜¾ç¤ºæç¤ºæ¡†
+			showToInput();//å°†æ‰€é€‰æç¤ºæ¡†å†…å®¹æ·»åŠ åˆ°inputæ¡†
 			
 		};
-		if(trim(emailInput.value)==''&&emailSugWrapper.innerHTML){//µ±ÊäÈëÄÚÈİÎª¿ÕÊ±£¬ÌáÊ¾¿òÏûÊ§
+		if(trim(emailInput.value)==''&&emailSugWrapper.innerHTML){//å½“è¾“å…¥å†…å®¹ä¸ºç©ºæ—¶ï¼Œæç¤ºæ¡†æ¶ˆå¤±
 			emailSugWrapper.innerHTML='';
 		};
 	};
-	function trim(str){//È¥µôÊ×Î²¿Õ¸ñ
+	function trim(str){//å»æ‰é¦–å°¾ç©ºæ ¼
 		return str.replace(/(^\s*)|(\s*$)/g,'');
 	};
-	var HtmlUtil={//JS¶ÔHTML×Ö·ûµÄ×ªÒåºÍ·´×ªÒå
+	var HtmlUtil={//JSå¯¹HTMLå­—ç¬¦çš„è½¬ä¹‰å’Œåè½¬ä¹‰
 		htmlEncode:function (str){ 
 			var s = "";
 			if(str.length == 0){
@@ -68,10 +68,10 @@
 			 return s; 
 	   }
 	};
-	function getText(){//»ñÈ¡ÓÃ»§ÊäÈë
+	function getText(){//è·å–ç”¨æˆ·è¾“å…¥
 		var strArr=new Array();
 		var str=emailInput.value;
-		if(str.indexOf('@')!==-1){/*ÓÃ»§Èç¹ûÊäÈëÓĞ@·ûºÅ£¬Ö»»ñÈ¡@·ûºÅÇ°ÃæµÄ×Ö·û*/
+		if(str.indexOf('@')!==-1){/*ç”¨æˆ·å¦‚æœè¾“å…¥æœ‰@ç¬¦å·ï¼Œåªè·å–@ç¬¦å·å‰é¢çš„å­—ç¬¦*/
 			newStr=str.slice(0,str.indexOf('@'));
 		}else{
 			newStr=str;
@@ -80,22 +80,22 @@
 		strArr[1]=HtmlUtil.htmlEncode(trim(newStr));
 		return strArr;
 	};
-	function showText(){//ÏÔÊ¾ÌáÊ¾¿ò
+	function showText(){//æ˜¾ç¤ºæç¤ºæ¡†
 		emailSugWrapper.innerHTML='';
 		for(let i=0;i<postfixList.length;i++){
 			var itemList=document.createElement('li');
-			var inputText=getText();/*»ñÈ¡ÓÃ»§ÊäÈë,input[0]ÎªÔ­ÊäÈëÄÚÈİ£¬input[1]Îª@·ûºÅÇ°µÄÄÚÈİ*/
+			var inputText=getText();/*è·å–ç”¨æˆ·è¾“å…¥,input[0]ä¸ºåŸè¾“å…¥å†…å®¹ï¼Œinput[1]ä¸º@ç¬¦å·å‰çš„å†…å®¹*/
 			itemList.innerHTML=inputText[1]+'@'+postfixList[i];
 			var index=inputText[0].indexOf('@');
 			var itemListIndex=itemList.innerHTML.indexOf('@');
-			if((index+1==0)||(index+1==inputText[0].length)){//¸ù¾İÊäÈëÄÚÈİÆ¥Åä¶ÔÓ¦µÄÌáÊ¾¿ò
+			if((index+1==0)||(index+1==inputText[0].length)){//æ ¹æ®è¾“å…¥å†…å®¹åŒ¹é…å¯¹åº”çš„æç¤ºæ¡†
 				emailSugWrapper.appendChild(itemList);
 			}else{
 				for(let i=1;i<inputText[0].length-index;i++){
 					if(inputText[0][index+i]==itemList.innerHTML[itemListIndex+i]){
 						emailSugWrapper.appendChild(itemList);
 					}else{
-						emailSugWrapper.appendChild(itemList);//±ÜÃâÉ¾³ıÔªËØÊ±£¬×ÓÔªËØ²»´æÔÚ
+						emailSugWrapper.appendChild(itemList);//é¿å…åˆ é™¤å…ƒç´ æ—¶ï¼Œå­å…ƒç´ ä¸å­˜åœ¨
 						itemList.innerHTML='';
 						emailSugWrapper.removeChild(itemList);
 					};
@@ -104,10 +104,10 @@
 		};
 		differ(index,inputText);
 	};
-	function differ(index,inputText){//ÊäÈëÓëËùÓĞÆ¥Åä²»Í¬Ê±£¬ÏÔÊ¾È«²¿ÌáÊ¾¿ò
+	function differ(index,inputText){//è¾“å…¥ä¸æ‰€æœ‰åŒ¹é…ä¸åŒæ—¶ï¼Œæ˜¾ç¤ºå…¨éƒ¨æç¤ºæ¡†
 		var j=0;
 		if(index!==-1){
-			var inputT=inputText[0].slice(index+1);//»ñÈ¡@Ö®ºóµÄµÄÊäÈëÄÚÈİ
+			var inputT=inputText[0].slice(index+1);//è·å–@ä¹‹åçš„çš„è¾“å…¥å†…å®¹
 			for(let i=0;i<postfixList.length;i++){
 				var postfix=postfixList[i].slice(0,inputT.length);
 				if(inputT!==postfix){
@@ -123,7 +123,7 @@
 			};
 		};
 	};
-	function showToInput(){//½«ËùÑ¡ÌáÊ¾¿òÄÚÈİÌí¼Óµ½input¿ò
+	function showToInput(){//å°†æ‰€é€‰æç¤ºæ¡†å†…å®¹æ·»åŠ åˆ°inputæ¡†
 		var lis=emailSugWrapper.querySelectorAll('li');
 		if(lis.length>0){
 			lis[0].style.backgroundColor='#ccc';
@@ -141,26 +141,26 @@
 	
 	var indexs=0;
 	document.onkeydown=function keyEvent(){
-		if(event.keyCode==8){//BackspaceÉ¾³ı¼ü£¬£¬ÖØĞÂ¼ÆÊı
+		if(event.keyCode==8){//Backspaceåˆ é™¤é”®ï¼Œï¼Œé‡æ–°è®¡æ•°
 			indexs=0;
 		};
 		var lis=document.querySelectorAll('#email-sug-wrapper li');
 	    if(event.keyCode==38||event.keyCode==40||event.keyCode==13){
-			if(event.keyCode==38){//¼üÅÌÉÏ¼ü
+			if(event.keyCode==38){//é”®ç›˜ä¸Šé”®
 				if(indexs==0){
 					indexs=lis.length-1;
 				}else{
 					indexs--;
 				};
 			};
-			if(event.keyCode==40){//¼üÅÌÏÂ¼ü
+			if(event.keyCode==40){//é”®ç›˜ä¸‹é”®
 				if(indexs==lis.length-1){
 					indexs=0;
 				}else{
 					indexs++;
 				};
 			};
-			if(event.keyCode==13){//»Ø³µ¼ü
+			if(event.keyCode==13){//å›è½¦é”®
 				emailInput.value=HtmlUtil.htmlDecode(lis[indexs].innerHTML);	
 				emailSugWrapper.style.display='none';
 			};
@@ -169,11 +169,11 @@
 		var lis=document.querySelectorAll('#email-sug-wrapper li');
 		if(lis.length>0){
 			for(let i=0;i<lis.length;i++){
-				lis[i].style.backgroundColor='';//Çå³ıÆäËûµÄÑùÊ½
+				lis[i].style.backgroundColor='';//æ¸…é™¤å…¶ä»–çš„æ ·å¼
 			};
 			lis[indexs].style.backgroundColor='#ccc';
 		};
-		if(event.keyCode==27){//Esc¼ü£¬°´ÏÂÊ±ÎÄ±¾È«Ñ¡
+		if(event.keyCode==27){//Escé”®ï¼ŒæŒ‰ä¸‹æ—¶æ–‡æœ¬å…¨é€‰
 			emailInput.select();
 		};
 	};
