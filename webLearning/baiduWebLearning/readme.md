@@ -7,6 +7,9 @@ task03<br>
 task04<br>
 -----
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task04/project_train_2.html)<br>
+task05<br>
+-----
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task05/resume.html)<br>
 task06<br>
 -----
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task06_js2/js_1.html)<br>
