@@ -18,10 +18,10 @@ task08
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task08/js_3.html)<br>
 task09
 -----
-[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task08/js_4.html)<br>
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task09/js_4.html)<br>
 task10
 -----
-[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task08/js_5.html)<br>
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task10/js_5.html)<br>
 task11
 -----
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task11/js_6.html)<br>
