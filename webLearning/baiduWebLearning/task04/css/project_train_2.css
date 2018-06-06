@@ -461,6 +461,8 @@ margin-left:10px;
 }
 .text1 p:nth-child(2),.text2 p:nth-child(2){
 font-size: 14px;
+height: 98px;
+margin-left: 90px;
 }
 .Tues_box{
 height:30px;
@@ -486,7 +488,7 @@ width:260px;
 border-bottom:1px solid gray;
 }
 .news_left{
-width:247px;
+width:236px;
 border-bottom:1px solid rgb(35, 153, 241);
 }
 .photo_box{
