@@ -1,31 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title> µ¹Êı¿ªÊ¼ µÎ´ğµÎ µÎ´ğµÎ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> å€’æ•°å¼€å§‹ æ»´ç­”æ»´ æ»´ç­”æ»´</title>
 </head>
 
 <body>
-	<p id="date-result1" data-format="YYYY Äê MM ÔÂ DD ÈÕ ĞÇÆÚww HH:mm:ss"></p>
+	<p id="date-result1" data-format="YYYY å¹´ MM æœˆ DD æ—¥ æ˜ŸæœŸww HH:mm:ss"></p>
 	<p id="date-result2" data-format="YYYY-MM-DD WW hh:mm:ss md"></p>
 	<select id="year-select">
-	</select><span>Äê</span>
+	</select><span>å¹´</span>
 	
 	<select id="month-select">
-	</select><span>ÔÂ</span>
+	</select><span>æœˆ</span>
 	
 	<select id="day-select">
 	<option>1</option>
-	</select><span>ÈÕ</span>
+	</select><span>æ—¥</span>
 	
 	<select id="hour-select">       
-	</select><span>Ê±</span>
+	</select><span>æ—¶</span>
 	
 	<select id="minute-select">
-	</select><span>·Ö</span>
+	</select><span>åˆ†</span>
 	<select id="second-select">
-	</select><span>Ãë</span>
-	<p id="result-wrapper">ÏÖÔÚ¾àÀë 2001Äê1ÔÂ1ÈÕĞÇÆÚX HH:MM:SS »¹ÓĞ X Ìì X Ğ¡Ê± X ·Ö X Ãë</p>
+	</select><span>ç§’</span>
+	<p id="result-wrapper">ç°åœ¨è·ç¦» 2001å¹´1æœˆ1æ—¥æ˜ŸæœŸX HH:MM:SS è¿˜æœ‰ X å¤© X å°æ—¶ X åˆ† X ç§’</p>
 <script>
 	function Go() {
 		console.log("Go");
@@ -44,34 +44,34 @@
 			return 0;
 		}
 	}
-	/*GoSteps(10);//  Go 10´Î
-	GoSteps(1); // Go 1´Î
-	GoSteps(); // Go 1´Î£¬ÈÏÎªÈ±ÉÙ²ÎÊıÊ±£¬Ä¬ÈÏ²ÎÊıÎª1
-	GoSteps(0)  // 0´Î
-	GoSteps(-1);  // 0´Î
-	GoSteps(1.4);  // Go 1´Î
-	GoSteps(1.6);  // Go 1´Î
-	GoSteps(-1);  // 0´Î
-	GoSteps(true);  // Go 1´Î
-    GoSteps(false)  // 0´Î
-	GoSteps("Test");  // 0´Î
-	GoSteps(NaN);  // 0´Î
-	GoSteps(null);  // 0´Î*/
+	/*GoSteps(10);//  Go 10æ¬¡
+	GoSteps(1); // Go 1æ¬¡
+	GoSteps(); // Go 1æ¬¡ï¼Œè®¤ä¸ºç¼ºå°‘å‚æ•°æ—¶ï¼Œé»˜è®¤å‚æ•°ä¸º1
+	GoSteps(0)  // 0æ¬¡
+	GoSteps(-1);  // 0æ¬¡
+	GoSteps(1.4);  // Go 1æ¬¡
+	GoSteps(1.6);  // Go 1æ¬¡
+	GoSteps(-1);  // 0æ¬¡
+	GoSteps(true);  // Go 1æ¬¡
+    GoSteps(false)  // 0æ¬¡
+	GoSteps("Test");  // 0æ¬¡
+	GoSteps(NaN);  // 0æ¬¡
+	GoSteps(null);  // 0æ¬¡*/
 	
 	
-	//ÈÎÎñ2
+	//ä»»åŠ¡2
 	var dateResult1=document.querySelector('#date-result1');
 	var dateResult2=document.querySelector('#date-result2');
 	var format1=dateResult1.dataset.format;
 	var format2=dateResult2.dataset.format;
 	
 	
-	//Êı×ÖÎ»Êı
+	//æ•°å­—ä½æ•°
 	var numCover=function(num){
 		return num>=10?num:'0'+num;
 	};
-	//ĞÇÆÚ¸ñÊ½
-	var week=['ÈÕ','Ò»','¶ş','Èı','ËÄ','Îå','Áù'];
+	//æ˜ŸæœŸæ ¼å¼
+	var week=['æ—¥','ä¸€','äºŒ','ä¸‰','å››','äº”','å…­'];
 	var weekEn=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 	var getWeek=function(date){
 		return {
@@ -79,7 +79,7 @@
 			WW:weekEn[date.getDay()]
 		}
 	};
-	//Ğ¡Ê±¸ñÊ½
+	//å°æ—¶æ ¼å¼
 	var getHour=function(date){
 		var hour=numCover(date.getHours());
 		return {
@@ -89,16 +89,16 @@
 		}
 	};
 	var getFormat=function(date,format){
-		var obj={//°ÑÊ±¼ä´æ´¢ÔÚobj¶ÔÏóÖĞ
+		var obj={//æŠŠæ—¶é—´å­˜å‚¨åœ¨objå¯¹è±¡ä¸­
 			YYYY:date.getFullYear(),
 			MM:numCover(date.getMonth()+1),
 			DD:numCover(date.getDate()),
 			mm:numCover(date.getMinutes()),
 			ss:numCover(date.getSeconds()),
 		};
-		//Ìí¼ÓĞÇÆÚ
+		//æ·»åŠ æ˜ŸæœŸ
 		Object.assign(obj,getWeek(date));
-		//Ìí¼ÓĞ¡Ê±
+		//æ·»åŠ å°æ—¶
 		Object.assign(obj,getHour(date));
 		var str=format;
 		for(var x in obj){
@@ -113,10 +113,10 @@
 		dateResult1.innerHTML=getFormat(date,format1);
 		dateResult2.innerHTML=getFormat(date,format2);
 	};
-	runTime();//³õ´Î¼ÓÔØ
+	runTime();//åˆæ¬¡åŠ è½½
 	setInterval(runTime,1000);
 	
-		//ÈÎÎñ3
+		//ä»»åŠ¡3
 		
 		var yearSelector=document.querySelector('#year-select');
 		var monthSelector=document.querySelector('#month-select');
@@ -126,51 +126,51 @@
 		var secondSelector=document.querySelector('#second-select');
 		var resultWrapper=document.querySelector('#result-wrapper');
 		var selectors=document.querySelectorAll("select");
-		for(var i=0;i<32;i++){//Ìí¼ÓÄê·İ
+		for(var i=0;i<32;i++){//æ·»åŠ å¹´ä»½
 			var opt=document.createElement('option');
 			opt.innerHTML=i+2000;
 			yearSelector.appendChild(opt);
 		};
-		for(var i=1;i<13;i++){//Ìí¼ÓÔÂ·İ
+		for(var i=1;i<13;i++){//æ·»åŠ æœˆä»½
 			var opt=document.createElement('option');
 			opt.innerHTML=i;
 			monthSelector.appendChild(opt);
 		};
-		for(var i=0;i<24;i++){//Ìí¼ÓĞ¡Ê±
+		for(var i=0;i<24;i++){//æ·»åŠ å°æ—¶
 			var opt=document.createElement('option');
 			opt.innerHTML=i;
 			hourSelector.appendChild(opt);
 		}
-		for(var i=0;i<61;i++){//Ìí¼Ó·ÖÖÓ
+		for(var i=0;i<61;i++){//æ·»åŠ åˆ†é’Ÿ
 			var opt=document.createElement('option');
 			opt.innerHTML=i;
 			minuteSelector.appendChild(opt);
 		}
-		for(var i=0;i<61;i++){//Ìí¼ÓÃë
+		for(var i=0;i<61;i++){//æ·»åŠ ç§’
 			var opt=document.createElement('option');
 			opt.innerHTML=i;
 			secondSelector.appendChild(opt);
 		};	
 		
-		function change(){//Ìí¼Ó¸÷¸öÔÂµÄÌìÊı
+		function change(){//æ·»åŠ å„ä¸ªæœˆçš„å¤©æ•°
 			if(true){
 				var monValue=monthSelector.value;
 				daySelector.innerHTML='';
 				if(monValue==1||monValue==3||monValue==5||monValue==7||monValue==8||monValue==10||monValue==12){
-					for(var i=1;i<32;i++){//31ÌìµÄÔÂ·İ
+					for(var i=1;i<32;i++){//31å¤©çš„æœˆä»½
 						var opt=document.createElement('option');
 						opt.innerHTML=i;
 						daySelector.appendChild(opt);
 					};
 				};
 				if(monValue==4||monValue==6||monValue==9||monValue==11){
-					for(var i=1;i<31;i++){//30ÌìµÄÔÂ·İ
+					for(var i=1;i<31;i++){//30å¤©çš„æœˆä»½
 						var opt=document.createElement('option');
 						opt.innerHTML=i;
 						daySelector.appendChild(opt);
 					};
 				};
-				if(monValue==2){//¶şÔÂ·İµ¥¶ÀËã
+				if(monValue==2){//äºŒæœˆä»½å•ç‹¬ç®—
 					var yearValue=yearSelector.value;
 					if(yearValue%400==0||(yearValue%100!==0&&yearValue%4==0)){
 						for(var i=1;i<30;i++){
@@ -189,7 +189,7 @@
 			};
 			showResult();
 		};
-		for(var i=0;i<selectors.length;i++){//Ñ¡Ôñ¸Ä±äÊ±´¥·¢ÊÂ¼ş
+		for(var i=0;i<selectors.length;i++){//é€‰æ‹©æ”¹å˜æ—¶è§¦å‘äº‹ä»¶
 			if(i==0||i==1){
 				selectors[i].onchange=change;
 			}else{
@@ -200,22 +200,22 @@
 		function showResult(){
 			
 			var dateArr=yearSelector.value+'-'+monthSelector.value+'-'+daySelector.value+' '+hourSelector.value+':'+minuteSelector.value+':'+secondSelector.value;
-			//»ñÈ¡µ±Ç°ËùÑ¡Ê±¼ä
+			//è·å–å½“å‰æ‰€é€‰æ—¶é—´
 			var newDateArr=new Date(dateArr);
-			var date=new Date();//»ñÈ¡µ±Ç°Ê±¼ä
-			var diff=date.getTime()/1000-newDateArr.getTime()/1000;//¼ÆËãÁ½ÕßÏà²îµÄÃëÊı
-			var connetText=diff>0?'ÒÑ¾­¹ıÈ¥':'»¹ÓĞ';
+			var date=new Date();//è·å–å½“å‰æ—¶é—´
+			var diff=date.getTime()/1000-newDateArr.getTime()/1000;//è®¡ç®—ä¸¤è€…ç›¸å·®çš„ç§’æ•°
+			var connetText=diff>0?'å·²ç»è¿‡å»':'è¿˜æœ‰';
 			if(diff<0){
 				diff=Math.abs(diff);
 			};
-			var diffDay=parseInt(diff/86400,10);//Ò»Ìì86400Ãë
+			var diffDay=parseInt(diff/86400,10);//ä¸€å¤©86400ç§’
 			diff=diff%86400;
-			var diffHours=parseInt(diff/3600,10);//Ò»Ğ¡Ê±3600Ãë
+			var diffHours=parseInt(diff/3600,10);//ä¸€å°æ—¶3600ç§’
 			diff=diff%3600;
-			var diffMinute=parseInt(diff/60,10);//Ò»·Ö60Ãë
+			var diffMinute=parseInt(diff/60,10);//ä¸€åˆ†60ç§’
 			diff=diff%60;	
 			var diffSecond=parseInt(diff,10);
-			resultWrapper.innerHTML = 'ÏÖÔÚ¾àÀëËùÑ¡Ê±¼ä' + connetText + diffDay + ' Ìì ' + diffHours + ' Ğ¡Ê± ' + diffMinute + ' ·Ö ' + diffSecond + ' Ãë';
+			resultWrapper.innerHTML = 'ç°åœ¨è·ç¦»æ‰€é€‰æ—¶é—´' + connetText + diffDay + ' å¤© ' + diffHours + ' å°æ—¶ ' + diffMinute + ' åˆ† ' + diffSecond + ' ç§’';
 		};
 		
 		
