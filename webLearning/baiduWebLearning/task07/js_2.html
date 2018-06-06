@@ -33,21 +33,30 @@
             <p class="">Some Text</p>
         </div>      
     </div>
-    <script>
-	/*在这个练习中仅允许使用以下 DOM 方法或属性，不得使用高级选择器
+	
+	<p>在这个练习中仅允许使用以下 DOM 方法或属性，不得使用高级选择器<br>
 
-	getElementById()
-	getElementsByTagName()
-	childNodes
-	parentNode
-*/
+	getElementById()<br>
+	getElementsByTagName()<br>
+	childNodes<br>
+	parentNode<br>
+	</p>
+	<p>1,返回页面中所有li标签</p>
+	<p>2,返回某个section下所有span中内容为HTML的span标签</p>
+	<p>3,返回某个section下，所有所包含span内容为spanCont的LI标签</p>
+	<p>4,返回某个section下，class为active的链接中包含的文字内容</p>
+	<br>
+	<p>再次尝试前面的几个查找元素的练习，但是使用querySelector及querySelectorAll</p>
+	<p>结果见console</p>
+    <script>
+
     function getAllListItem() {
-        // ����ҳ��������li��ǩ
+        // 返回页面中所有li标签
 		return document.getElementsByTagName("li");
     }
 
     function findAllHtmlSpanInOneSection(sectionId) {
-        // ����ĳ��section������span������ΪHTML��span��ǩ
+         // 返回某个section下所有span中内容为HTML的span标
 		var sec=document.getElementById(sectionId);
 		var sp=sec.getElementsByTagName("span");
 		var result=new Array();
@@ -60,7 +69,7 @@
     }
 
     function findListItem(sectionId, spanCont) {
-        // ����ĳ��section�£�����������span����ΪspanCont��LI��ǩ
+         // 返回某个section下，所有所包含span内容为spanCont的LI标签
 		var sec=document.getElementById(sectionId);
 		var sp=sec.getElementsByTagName("span");
 		var result=new Array();
@@ -73,7 +82,7 @@
     }
 
     function getActiveLinkContent(sectionId) {
-        // ����ĳ��section�£�classΪactive�������а�������������
+        // 返回某个section下，class为active的链接中包含的文字内容
 		var sec=document.getElementById(sectionId);
 		var liNode=sec.getElementsByTagName("li");
 		var result=new Array();
