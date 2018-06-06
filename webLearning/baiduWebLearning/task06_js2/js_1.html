@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>js学习第一课</title>
+<style>
+	#table0 tr th{
+		border:1px solid gray;
+		padding:5px;
+	}
+</style>
 </head>
 
 <body>
-<p>结果看console</p>
-	<!--练习1-->
-	<!--<h1>Demo</h1>
+
+	<p>--练习1--</p>
+	<h1>Demo</h1>
     <p id="content-wrapper">Hello World</p>
     <script>
         console.log(document.getElementById("content-wrapper").innerHTML);
-    </script>-->
+    </script>
 	
 	
 	
-	<!--练习2-->
-	<!--<h1>Demo</h1>
+	<p>-练习2--</p>
+	<h1>Demo</h1>
     <p id="content-wrapper">你是谁？</p>
     <input id="name-input" type="text" placeholder="输入你的名字">
     <button id="send-btn">发送</button>
@@ -25,12 +31,12 @@
         document.getElementById("send-btn").onclick = function() {
             document.getElementById("content-wrapper").innerHTML = 'Hello ' + document.getElementById("name-input").value;
         }
-	</script>-->
+	</script>
 	
 	
 	
-	<!--练习3，两个数字的加减乘除-->
-	<!--<input id="first-number" type="number" value="0" placeholder="第一个数字">
+	<p>练习3，两个数字的加减乘除</p>
+	<input id="first-number" type="number" value="0" placeholder="第一个数字">
     <input id="second-number" type="number" value="0" placeholder="第二个数字">
     <button id="add-btn">加</button>
     <button id="minus-btn">减</button>
@@ -55,11 +61,11 @@
 			document.getElementById("result").innerHTML=parseFloat(document.getElementById("first-number").value)/parseFloat(document.getElementById("second-number").value);
 		}
 					}
-    </script>-->
+    </script>
 	
 	
-	<!--练习4，实现十进制转换为二进制-->
-	<!-- <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+	<p>练习4，实现十进制转换为二进制</p>
+	 <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
 	  <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
     <button id="trans-btn">转化为二进制</button>
     <p id="result1">运算结果</p>
@@ -92,15 +98,15 @@
 				document.getElementById("result1").innerHTML="请输入一个非负整数";
 			}
 		};
-    </script>-->
+    </script>
 	
 	
 	
-	<!--练习5
+	<p>--练习5
 	3的小游戏，练习使用循环和条件语句，实现如下需求：
 	从1到100，以此在console输出各数字，但是，当数字为3的倍数或者含有3的时候，输出“PA”
-	比如：1,2,PA,4,5,PA,……,11,PA,PA,14,PA……-->
-	<!--	<script>
+	比如：1,2,PA,4,5,PA,……,11,PA,PA,14,PA……</p>
+		<script>
 		var numbers=[];
 		for(var i=1;i<=100;i++){
 			var str=String(i);
@@ -112,25 +118,28 @@
 				}
 		}
 		console.log(numbers.join(","));
-	</script>-->
+	</script>
 	
 	
 	
-	<!--练习6，
-	第一步，最低要求：在Console中按行输出 n * m = t
-	然后，尝试在网页中，使用table来实现一个九九乘法表-->
-<!--	<table id="tab">
-		<td><tr></tr></td>
-		<td><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></td>
-		<td><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr></td>
-	</table>-->
+	<p>--练习6，
+	第一步，最低要求：
+	然后，尝试在网页中，使用table来实现一个九九乘法表--</p>
+	<table id="table0"></table>
 	<script>
+		
+		var crtable=document.getElementById("table0");
+		
+		for(var i=1;i<=9;i++){
+			var crtr=document.createElement("tr");
+			for(var j=1;j<=i;j++){
+				var crth=document.createElement("th");
+				crth.innerText=j+"*"+i+"="+i*j;
+				crtr.appendChild(crth);
+			}
+			crtable.appendChild(crtr);
+		}
+	/*在Console中按行输出 九九乘法表*/
 		var output=[];
 		for(var n=1;n<=9;n++){
 			for(var m=1;m<=n;m++){			
