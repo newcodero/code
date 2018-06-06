@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>����</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>简历</title>
 <link rel="stylesheet" href="css\style_2.css" />
 </head>
 
@@ -13,53 +13,53 @@
 <div class="cont">
 	
 	<div class="resume">
-		<h1>����</h1>
+		<h1>简历</h1>
 	</div>
 	<div class="box">
 		<div class="box1">
-		<div class="boxh2"><h2>������Ϣ</h2></div>
+		<div class="boxh2"><h2>基本信息</h2></div>
 		<div class="box11">
-			<div><strong>����</strong><span>����</span>
-			<strong>�Ա�</strong><span>��</span>
-			<strong>ӦƸְλ</strong><span>Webǰ�˹���ʦ</span></div>
+			<div><strong>姓名</strong><span>张三</span>
+			<strong>性别</strong><span>男</span>
+			<strong>应聘职位</strong><span>Web前端工程师</span></div>
 		</div>
 		</div>
 		<div class="box1">
-		<div class="boxh2"><h2>��ϵ��ʽ</h2></div>
+		<div class="boxh2"><h2>联系方式</h2></div>
 		<div class="box11">
-			<div><strong>�ֻ�</strong><span>123123123412</span>
+			<div><strong>手机</strong><span>123123123412</span>
 			<strong>Email</strong><a href="">joinefe@baidu.com</a>
-			<strong>������ҳ</strong><a href="">Github</a></div>
+			<strong>个人主页</strong><a href="">Github</a></div>
 		</div>
 		</div>
 		<div class="box1">
-		<div class="boxh2"><h2>��������</h2></div>
+		<div class="boxh2"><h2>能力描述</h2></div>
 		<div class="box11">
-			<p><strong>��������</strong>
-			��Ϥ����HTML.CSS.JavaScript</p>
-			<p><strong>�ۺ�����</strong>
-			���õĹ�ͨ������������Ŭ���ڷ�</p>
+			<p><strong>技术能力</strong>
+			熟悉掌握HTML.CSS.JavaScript</p>
+			<p><strong>综合能力</strong>
+			良好的沟通，主动积极，努力勤奋</p>
 		</div>
 		</div>
 		<div class="box1">
-		<div class="boxh2"><h2>��������</h2></div>
+		<div class="boxh2"><h2>教育经历</h2></div>
 		<div class="box11">
-			<p><strong>����</strong>
-			�ٶ�ǰ�˼���ѧԺСޱѧԺ</p>
-			<p><strong>�о���</strong>
-			�ٶ�ǰ�˼���ѧԺ���ѧԺ</p>
+			<p><strong>本科</strong>
+			百度前端技术学院小薇学院</p>
+			<p><strong>研究生</strong>
+			百度前端技术学院大斌学院</p>
 		</div>
 		</div>
 		<div class="box1">
-		<div class="boxh2"><h2>��Ŀ����</h2></div>
+		<div class="boxh2"><h2>项目经历</h2></div>
 		<div class="box11">
-			<p><strong>С��С��</strong>
-			��Ϊǰ�˹���ʦ��ɫ������ABC����Ŀ���</p>
+			<p><strong>小度小度</strong>
+			作为前端工程师角色参与了ABC组件的开发</p>
 			<p><strong>SAN Doc</strong>
-			��Ϊ�ĵ�����ʦ������SAN Doc��д</p>
+			作为文档工程师参与了SAN Doc编写</p>
 		</div>
 		</div>
-		<button id="btn">����˽��ҵĸ�����Ȥ����</button><button id="btn2">��������ҵ���Ȥ����</button>
+		<button id="btn">点击了解我的更多兴趣爱好</button><button id="btn2">点击隐藏我的兴趣爱好</button>
 		<p id="result"></p>
 	</div>
 </div>
@@ -67,7 +67,7 @@
 	document.getElementById("btn").addEventListener("click",inter);
 	document.getElementById("btn2").addEventListener("click",hidden);
 	function inter(){
-		document.getElementById("result").innerHTML="�ҵ���Ȥ���ð����Ķ����ܲ�����̣���ѧ�����ģ������ȵȣ�";
+		document.getElementById("result").innerHTML="我的兴趣爱好包括阅读，跑步，编程，数学，天文，动漫等等！";
 	}
 	function hidden(){
 		document.getElementById("result").innerHTML="";
@@ -76,15 +76,15 @@
 	var date=new Date();
 	var hour=date.getHours();
 	if(hour>=0&&hour<=4){
-		document.getElementById("dateshow").innerHTML="�賿�ã�";
+		document.getElementById("dateshow").innerHTML="凌晨好！";
 	}else if(hour>=5&&hour<=8){
-		document.getElementById("dateshow").innerHTML="���Ϻã�";
+		document.getElementById("dateshow").innerHTML="早上好！";
 	}else if(hour>=9&&hour<=12){
-		document.getElementById("dateshow").innerHTML="����ã�";
+		document.getElementById("dateshow").innerHTML="中午好！";
 	}else if(hour>=13&&hour<=18){
-		document.getElementById("dateshow").innerHTML="����ã�";
+		document.getElementById("dateshow").innerHTML="下午好！";
 	}else{
-		document.getElementById("dateshow").innerHTML="���Ϻã�";
+		document.getElementById("dateshow").innerHTML="晚上好！";
 	}
 
 
