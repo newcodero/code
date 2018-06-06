@@ -1,16 +1,14 @@
 body,p,div{
 margin:0px;}
-
-.Background {
- background-color: rgb(20, 20, 20);
-  opacity:0.65;
-  z-index:236;
-}
 .img1{
 width:100%;
 height:990px;
 border:1px solid gray;
-background-image: url(images/前端学院设计图_002.png);
+background-image: url(../images/qianduan_002.png);
+opacity:0.65;
+}
+.img1:hover{
+opacity:1;
 }
 .img1_box{
 width:970px;
@@ -94,9 +92,14 @@ margin-right:30px;}
 width:100%;
 height:800px;
 border: 1px solid gray;
-background-image: url(images/前端学院设计图_005.png);
+background-image: url(../images/qianduan_005.png);
 overflow:hidden;
-background-repeat: no-repeat;}
+background-repeat: no-repeat;
+opacity:0.65;
+}
+.part3:hover{
+opacity:1;
+}
 .part3_left{
 width:530px;
 height:460px;
@@ -137,7 +140,7 @@ width:585px;
 height:542px;
 float:right;
 margin-top:30px;
-background-image:url(images/前端学院设计图_033.png);
+background-image: url(../images/qianduan_033.png);
 border:1px solid gray;
 border-right-width:0px;
 }
@@ -279,13 +282,13 @@ background-repeat: no-repeat;
 background-position: center center;
 }
 .part6_inbox .icon1{
-background-image: url(images/Facebook.png);
+background-image: url(../images/Facebook.png)
 }
 .part6_inbox .icon2{
-background-image: url(images/Twitter.png);
+background-image: url(../images/Twitter.png);
 }
 .part6_inbox .icon3{
-background-image: url(images/Instagram.png);
+background-image: url(../images/Instagram.png);
 }
 .part6_inbox a:after{
     content: '';
