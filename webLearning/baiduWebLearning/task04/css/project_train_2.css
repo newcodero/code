@@ -22,22 +22,22 @@ background-position:center;
 }
 .item1{
 top:50px;
-background-image: url(../images/Item1.png);
+background-image: url(../images1/Item1.png);
 background-color:#249af2;
 }
 .item2{
 top:130px;
-background-image: url(../images/Item2.png);
+background-image: url(../images1/Item2.png);
 background-color:#8c72e5;
 }
 .item3{
 top:210px;
-background-image:url(../images/Item3.png);
+background-image:url(../images1/Item3.png);
 background-color:#e34125;
 }
 .item4{
 top:290px;
-background-image: url(../images/Plus.png);
+background-image: url(../images1/Plus.png);
 border:3px solid #2d3848;
 }
 .left_bot{
@@ -53,14 +53,14 @@ transform:translateX(-50%);
 width:16px;
 height:16px;
 display:inline-block;
-background-image: url(../images/Grid.png);
+background-image: url(../images1/Grid.png);
 color:#2d3848;
 }
 .item6{
 width:16px;
 height:16px;
 display:inline-block;
-background-image: url(../images/Settings.png);
+background-image: url(../images1/Settings.png);
 background-color:#2d3848;
 }
 
@@ -122,25 +122,25 @@ color: rgb(91, 103, 121);
 width:16px;
 height:16px;
 float:right;
-background-image:url(../images/Settings.png);
+background-image:url(../images1/Settings.png);
 }
 .books:before{
-content:url(../images/Book.png);
+content:url(../images1/Book.png);
 margin-right: 15px;
 vertical-align: middle;
 }
 .Tutor:before{
-content:url(../images/VideoCamera.png);
+content:url(../images1/VideoCamera.png);
 margin-right: 15px;
 vertical-align: middle;
 }
 .stocks:before{
-content:url(../images/Painting.png);
+content:url(../images1/Painting.png);
 margin-right: 15px;
 vertical-align: middle;
 }
 .infogra:before{
-content:url(../images/Chart.png);
+content:url(../images1/Chart.png);
 margin-right: 15px;
 vertical-align: middle;
 }
@@ -162,7 +162,7 @@ height:24px;
 float:right;
 background-color:rgb(203,39,10);
 border-radius: 50%;
-background-image:url(../images/i.png);
+background-image:url(../images1/i.png);
 background-repeat:no-repeat;
 background-position:center;}
 
@@ -208,7 +208,7 @@ color: rgb(181, 181, 181);
 float:left;
 }
 .admini:after{
-content:url(../images/dropdown.png);
+content:url(../images1/dropdown.png);
 float:right;
 line-height:50px;
 }
@@ -239,7 +239,7 @@ padding-right:20px;
 padding-top:15px;
 border-top:1px solid gray;}
 .person_mes:before{
-content:url(../images/Pic1.png);
+content:url(../images1/Pic1.png);
 float:left;
 margin-right:20px;
 }
@@ -290,32 +290,32 @@ margin:5px auto;}
 /*左侧人物
 信息列表*/
 .person_mes1:before{
-content:url(../images/Pic2.png);
+content:url(../images1/Pic2.png);
 float:left;
 margin-right:20px;
 }
 .person_mes2:before{
-content:url(../images/Pic3.png);
+content:url(../images1/Pic3.png);
 float:left;
 margin-right:20px;
 }
 .person_mes3:before{
-content:url(../images/Pic4.png);
+content:url(../images1/Pic4.png);
 float:left;
 margin-right:20px;
 }
 .person_mes4:before{
-content:url(../images/Pic5.png);
+content:url(../images1/Pic5.png);
 float:left;
 margin-right:20px;
 }
 .person_mes5:before{
-content:url(../images/Pic6.png);
+content:url(../images1/Pic6.png);
 float:left;
 margin-right:20px;
 }
 .person_mes6:before{
-content:url(../images/Pic7.png);
+content:url(../images1/Pic7.png);
 float:left;
 margin-right:20px;
 }
@@ -436,12 +436,12 @@ background-position-x:center;
 .lastbot_person1 div:first-child{
 margin-top:30px;
 height:100px;
-background-image: url(../images/Pic1.png);
+background-image: url(../images1/Pic1.png);
 }
 .lastbot_person2 div:first-child{
 height:200px;
 margin-top:30px;
-background-image: url(../images/Pic0.png);
+background-image: url(../images1/Pic0.png);
 }
 .text1{
 padding-top:20px;
@@ -501,10 +501,10 @@ height:100px;
 }
 .photo1{
 margin:0px 20px 20px 100px;
-background-image: url(../images/Picsky.png);}
+background-image: url(../images1/Picsky.png);}
 .photo2{
 margin-bottom:20px;
-background-image: url(../images/Photo.png);}
+background-image: url(../images1/Photo.png);}
 .background,.backimg{
 display:block;
 width: 50px;
@@ -522,7 +522,7 @@ position:relative;
 }
 .backimg{
 position: absolute;
-background-image:url(../images/Openicon.png);
+background-image:url(../images1/Openicon.png);
 background-position:center;
 background-repeat:no-repeat;
 }
@@ -540,7 +540,7 @@ float:left;
 height:54px;
 width:50px;
 background-color:#f6f7fa;
-background-image:url(../images/Addicon.png);
+background-image:url(../images1/Addicon.png);
 background-position:center;
 background-repeat:no-repeat;
 border: 1px solid gray;
