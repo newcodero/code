@@ -1,7 +1,7 @@
 body,p,div{
 margin:0px;}
 .img1{
-width:100%;
+width:1349px;
 height:990px;
 border:1px solid gray;
 background-image: url(../images/qianduan_002.png);
@@ -56,7 +56,7 @@ background: none;}
 
 .part2{
 height:700px;
-width:100%;
+width:1349px;
 border: 1px solid gray;}
 .part2_box1{
 width: 670px;
@@ -89,7 +89,7 @@ float:left;
 margin-right:30px;}
 
 .part3{
-width:100%;
+width:1349px;
 height:800px;
 border: 1px solid gray;
 background-image: url(../images/qianduan_005.png);
@@ -155,7 +155,7 @@ top:290px;
 }
 /*part4*/
 .part4{
-width:100%;
+width:1349px;
 height:580px;
 text-align:center;
 border-bottom: 1px solid gray;}
@@ -181,7 +181,7 @@ margin-bottom:40px;
 }
 /*part5*/
 .part5{
-width:100%;
+width:1349px;
 height:1000px;
 border-bottom: 1px solid gray;}
 .part5_box{
@@ -203,7 +203,7 @@ margin-bottom:30px;}
 
 /*part6*/
 .part6{
-width:100%;
+width:1349px;
 height:1100px;
 border-bottom: 1px solid gray;}
 .part6_text{
@@ -303,7 +303,7 @@ background-image: url(../images/Instagram.png);
 
 /*part7*/
 .part7{
-width:100%;
+width:1349px;
 height:700px;
 border-bottom: 1px solid gray;}
 .part7_left{
@@ -360,7 +360,7 @@ float:left;
 }
 /*part8*/
 .part8{
-width:100%;
+width:1349px;
 height:400px;
 background-color:#000000;
 }
