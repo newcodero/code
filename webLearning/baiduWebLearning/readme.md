@@ -1,14 +1,11 @@
-此路径用于百度web前端技术学院的任务学习<br>
-========
+#此路径用于百度web前端技术学院的任务学习<br>
 链接：http://ife.baidu.com/<br>
-task01：三种简历<br>
------
+##task01：三种简历<br>
 一份html,三份css样式。要求同一份HTML，可以在改变CSS代码的情况下，实现不同样式，达到HTML结构内容和CSS样式的解耦。<br>
 [结果预览1](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task01/resume.html)
 [结果预览2](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task01/resume2.html)
 [结果预览3](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task01/resume3.html)<br>
-task02:布局练习<br>
------
+##task02:布局练习<br>
 分别尝试使用Float、Position或者Flexbox来实现如下需求：<br>
 实现一个两栏布局，左侧占30%宽度，右侧占70%宽度<br><br>
 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化<br>
