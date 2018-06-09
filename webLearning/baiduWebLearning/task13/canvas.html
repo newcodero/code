@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我是精明的小卖家（二）--canvas练习</title>
+</head>
+
+<body>
+	<canvas id="canvas" width="700px" height="700px">
+		
+	</canvas>
+	<script>
+		var canvas=document.querySelector("#canvas");
+		if(canvas.getContext){
+			var ctx=canvas.getContext('2d');
+			
+			ctx.fillRect(20,20,100,2);
+			
+			ctx.beginPath();
+			ctx.moveTo(130,130);
+			ctx.lineTo(80,150);
+			ctx.lineTo(30,130);
+			ctx.fill();
+			
+			ctx.strokeRect(150,30,100,100);
+			
+			ctx.beginPath();
+			ctx.moveTo(150,30);
+			ctx.lineTo(130,80);
+			ctx.lineTo(150,130);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.fillStyle="rgb(0,200,0)";
+			ctx.arc(80,200,50,0,Math.PI*2,true)
+			ctx.fill();
+
+			ctx.fillStyle="rgb(200,0,0)";
+			ctx.fillRect(30,30,100,100);
+			 
+				//画一朵云
+			ctx.beginPath();
+			ctx.moveTo(350,140);
+			ctx.bezierCurveTo(350,50,390,50,430,70);
+			ctx.bezierCurveTo(430,10,560,10,560,40);
+			ctx.quadraticCurveTo(600,30,600,70);
+			ctx.bezierCurveTo(620,80,670,90,650,140);
+			//ctx.quadraticCurveTo(500,180,430,120);
+			//ctx.quadraticCurveTo(390,140,350,100);
+			ctx.closePath();
+			ctx.stroke();
+			
+			clock();//时钟
+			function clock(){
+				//时针
+				ctx.fillStyle="black";
+				ctx.save();
+				ctx.translate(300,250);
+				ctx.rotate(Math.PI*7.5/30);
+				ctx.beginPath();
+				ctx.moveTo(0,8);
+				ctx.lineTo(3,0);
+				ctx.lineTo(0,-35);
+				ctx.lineTo(-3,0);
+				ctx.fill();
+				ctx.restore();
+				
+				ctx.save();
+				ctx.translate(300,250);
+				//分针
+				ctx.beginPath();
+				ctx.moveTo(0,-8);
+				ctx.lineTo(3,0);
+				ctx.lineTo(0,55);
+				ctx.lineTo(-3,0);
+				ctx.fill();
+				//秒针
+				ctx.lineWidth='2';
+				ctx.beginPath();
+				ctx.lineTo(15,0);
+				ctx.lineTo(-58,0);
+				ctx.stroke();
+				
+				ctx.lineWidth='1';
+				ctx.beginPath();//圆形外框
+				ctx.arc(0,0,80,0,Math.PI*2,true);
+				ctx.stroke();
+				for(let i=0;i<60;i++){
+					ctx.save();
+					ctx.rotate((Math.PI)*i/30);
+					if(i%5!==0){//60分钟
+						ctx.beginPath();
+						ctx.moveTo(0,-80);
+						ctx.lineTo(0,-70);
+						ctx.stroke();
+						ctx.restore();
+					}else{
+						ctx.beginPath();
+						ctx.moveTo(0,-80);
+						ctx.lineTo(0,-60);
+						ctx.stroke();
+						if(i==0){
+							ctx.fillText(12,0,-50);//12小时
+						}else{
+							ctx.fillText(i/5,0,-50);
+						}
+						ctx.restore();
+					};
+					
+				};
+				ctx.restore();
+			};
+			
+		}else{
+			alert('不支持canvas');
+		};
+		
+	</script>
+</body>
+</html>
