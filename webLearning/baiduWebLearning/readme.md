@@ -39,4 +39,6 @@
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task11/js_6.html)<br>
 ## task12:我是精明的小卖家（一）
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task12/js_7.html)<br>
+## task13:我是精明的小卖家（二）
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task13/js_7.html)<br>
 
