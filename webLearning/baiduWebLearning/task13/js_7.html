@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我是精明的小卖家（一）</title>
+<style>
+	#div-show thead td,#tbody-show tr th{
+		border:1px solid #CCCCCC;
+		width:40px;
+		height:30px;
+		text-align:center;
+		line-height:30px;
+	}
+	#tbody-show tr th:nth-child(1),#tbody-show tr th:nth-child(2),#div-show tr th:nth-child(1),#div-show tr th:nth-child(2){
+		width:100px;
+	}
+	#data-show,#form-show{
+		margin-bottom:30px;
+	}
+	table{
+		border-collapse:collapse;
+	}
+	#left,#right{
+		float:left;
+		width:50%;
+	}
+</style>
+</head>
+
+<body>
+	<div id="left">
+		<div id="select-region">
+			选择查询的区域： 
+			<label><input name="region" type="checkbox" value="" checked="checked" disabled="disabled"/>华东</label>
+			<label><input name="region" type="checkbox" value="" />华南</label>
+			<label><input name="region" type="checkbox" value="" />华北</label>
+			<label><input name="region" type="checkbox" value="" />全选</label>
+		</div>
+		<div id="select-product">
+			选择查询的商品： 
+			<label><input name="region" type="checkbox" value="" checked="checked" disabled="disabled"/>手机</label>
+			<label><input name="region" type="checkbox" value="" />笔记本</label>
+			<label><input name="region" type="checkbox" value="" />智能音箱</label>
+			<label><input name="region" type="checkbox" value="" />全选</label>
+		</div>
+	
+		<div id='form-show'><strong>表格显示</strong>
+			<table id='div-show'>
+				<thead>
+					<tr>
+						<td>产品</td><td>地区</td><td>1月</td><td>2月</td>
+						<td>3月</td><td>4月</td><td>5月</td><td>6月</td>
+						<td>7月</td><td>8月</td><td>9月</td><td>10月</td>
+						<td>11月</td><td>12月</td>
+					</tr>
+				</thead>
+				<tbody id='tbody-show'>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="right">
+		<canvas id="canvas" width='600px' height='400px'></canvas>
+		<div id="contain"></div>
+	</div>
+<script type="text/javascript" src="js/js_7/js_7_checkbox.js" language="javascript"></script>
+<script type="text/javascript" src="js/js_7/js_7_textshow.js" language="javascript"></script>
+<script type="text/javascript" language="javascript" charset="utf-8" src="js/canvas/canvasLine.js"></script>
+<script type="text/javascript" src="js/js_svg1/svgbar.js"></script>
+
+<script type="text/javascript" language="javascript" charset="utf-8" src="js/js_7/js_7_mouseevent.js"></script>
+<script type="text/javascript" src="js/js_7/app.js" language="javascript"></script>
+</body>
+</html>
