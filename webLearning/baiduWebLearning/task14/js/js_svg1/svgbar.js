@@ -18,12 +18,12 @@ function svgBar(){
 		brect.setAttribute("width","30");
 		brect.setAttribute("height",dataSource[i]);
 		brect.setAttribute("x",40*i+40);
-		brect.setAttribute("y",dataMax-dataSource[i]);
+		brect.setAttribute("y",130+dataMax-dataSource[i]);
 		brect.setAttribute("style","fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)"); 
 		bsvg.appendChild(brect);
 	};
 	var axis=document.createElementNS("http://www.w3.org/2000/svg","polyline");
-		axis.setAttribute("points","25 5,30 0,35 5,30 0,30 270,560 270,555 265,560 270,555 275");
+		axis.setAttribute("points","25 5,30 0,35 5,30 0,30 400,560 400,555 395,560 400,555 395");
 		axis.setAttribute("style","fill:none;stroke:black;stroke-width:2");
 		bsvg.appendChild(axis);
 		
