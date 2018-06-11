@@ -10,7 +10,7 @@
 	}
 	#div-show thead td,#tbody-show tr th{
 		border:1px solid #CCCCCC;
-		width:40px;
+		width:80px;
 		height:30px;
 		text-align:center;
 		line-height:30px;
@@ -24,18 +24,30 @@
 	table{
 		border-collapse:collapse;
 	}
-	#left,#right{
+	#canvas,#contain{
 		float:left;
 		width:50%;
 	}
 	#tbody-show tr th button{
 	float:right;
-	width:40px;
+	width:43px;
+	}
+	#tbody-show tr th input{
+		float:left;
+	}
+	#right{
+	height:450px;}
+	#div-show{
+	margin:10px auto;
 	}
 </style>
 </head>
 
 <body>
+	<div id="right">
+		<canvas id="canvas" width='600px' height='400px'></canvas>
+		<div id="contain"></div>
+	</div>
 	<div id="left">
 		<div id="select-region">
 			选择查询的区域： 
@@ -68,10 +80,6 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-	<div id="right">
-		<canvas id="canvas" width='600px' height='400px'></canvas>
-		<div id="contain"></div>
 	</div>
 <script type="text/javascript" src="js/js_7/js_7_checkbox.js" language="javascript"></script>
 <script type="text/javascript" src="js/js_7/js_7_textshow.js" language="javascript"></script>
