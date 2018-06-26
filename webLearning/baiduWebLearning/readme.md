@@ -45,4 +45,5 @@ canvas小练习[结果预览](http://htmlpreview.github.io/?https://github.com/n
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task13/js_7.html)<br>
 ## task14:我是精明的小卖家（三）
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task14/js_7.html)<br>
-
+## task15:我是精明的小卖家（四）
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task15/js_7.html)<br>
