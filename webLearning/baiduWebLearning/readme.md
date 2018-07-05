@@ -49,3 +49,5 @@ canvas小练习[结果预览](http://htmlpreview.github.io/?https://github.com/n
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task15/js_7.html)<br>
 ### task16:开一家餐厅吧（一）
 [结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task16/restaurant.html)<br>
+### task16:开一家餐厅吧（二）
+[结果预览](http://htmlpreview.github.io/?https://github.com/newcodero/learning-journey/blob/master/webLearning/baiduWebLearning/task17/restaurant.html)<br>
