@@ -1,9 +1,6 @@
-function arrInit(k,trs,color,dataArr){//获取当前表格的数据或者hover的数据
+function arrInit(trs,color,dataArr,m,n){//获取当前表格的数据或者hover的数据
 	for(let i in objArr){
 		for(let x=0;x<objArr[i].length;x++){
-			//console.log(k);
-			let m=trs[k].children[0].innerText;
-			let n=trs[k].children[1].innerText;
 			let ind1=m.indexOf("编辑");
 			let ind2=n.indexOf("编辑");
 			if(ind1!==-1){
@@ -16,7 +13,6 @@ function arrInit(k,trs,color,dataArr){//获取当前表格的数据或者hover�
 			let region=objArr[i][x].region;
 			if(((m==product)&&(n==region))||((m==region)&&(n==product))){
 				color.push('rgb('+(50+i*100)+','+(50+x*100)+',100)');
-				
 				let dataArr1=[];
 				for(let j=0;j<objArr[i][x].sale.length;j++){
 					let dataRound=objArr[i][x].sale[j]*0.3;
@@ -28,10 +24,7 @@ function arrInit(k,trs,color,dataArr){//获取当前表格的数据或者hover�
 		};
 	};
 };
-
-
-function canvasLine(names,z){
-	
+function canvasLine(names,target){	
 	var canvas=document.querySelector('#canvas');
 	if(canvas.getContext){
 		var ctx=canvas.getContext('2d');
@@ -42,14 +35,16 @@ function canvasLine(names,z){
 		var trs=document.querySelectorAll('#tbody-show tr');
 		if(names=='clicks'){//点击事件触发显示表格的全部内容的折线
 			for(let k=0;k<trs.length;k++){
-				//console.log(trs.length+'en');
-				arrInit(k,trs,color,dataArr);
+				let m=trs[k].children[0].innerText;
+				let n=trs[k].children[1].innerText;
+				arrInit(trs,color,dataArr,m,n);
 			};
 		}else if(names=='mouses'){//hover事件只显示当前内容的折线趋势
 			ctx.clearRect(0,0,600,400);
-			arrInit(z,trs,color,dataArr);
-		}
-		
+			let m=target.parentNode.children[0].innerText;
+			let n=target.parentNode.children[1].innerText;
+			arrInit(trs,color,dataArr,m,n);
+		};
 		if(dataArr[0].length){
 			len=dataArr[0].length;
 		}else{
