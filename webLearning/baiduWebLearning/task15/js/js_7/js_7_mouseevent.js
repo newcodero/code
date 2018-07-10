@@ -2,23 +2,19 @@
 
 function mousevent(){
 	let trs=document.querySelectorAll('#tbody-show tr');
-	for(let k=0;k<trs.length;k++){
-		trs[k].onmouseover=function(){//mouseover出现当前单一折线
-			let trs=document.querySelectorAll('#tbody-show tr');
-			if(k<trs.length){//解决之前添加的事件保留问题
-				names='mouses';
-				canvasLine(names,k);
-			}
-			
+	let tbody=document.querySelector('#tbody-show');
+	tbody.onmouseover=function(e){//mouseover出现当前单一折线
+		let target=e.target || e.srcElement;
+		if(target.nodeName.toLowerCase()=="th"){
+			names='mouses';	
+			canvasLine(names,target);	
 		};
-		trs[k].onmouseout=function(){//鼠标移出时，显示全部折线
-			let trs=document.querySelectorAll('#tbody-show tr');
-			if(k<trs.length){
-				names='clicks';
-				canvasLine(names,k);
-			}
-		};								 
 	};
+	tbody.onmouseout=function(e){//鼠标移出时，显示全部折线
+		names='clicks';
+		canvasLine(names,'');
+	};								 
+	
 	for(let i=0;i<trs.length;i++){
 		for(let j=2;j<trs[i].children.length;j++){
 			trs[i].children[j].onmouseover=function(){edit(i,j,trs)};//悬浮提示
@@ -33,7 +29,6 @@ function mousevent(){
 	};
 };
 function thclick(trs,i,j){
-	
 	let  p=trs[i].children[j].querySelector('p');
 	if(p!==null){
 		trs[i].children[j].removeChild(p);
