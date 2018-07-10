@@ -39,9 +39,11 @@ let sourceData = [
 	sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
 }];
 var selectRegions=document.querySelectorAll('#select-region input');
+var selectRLabels=document.querySelectorAll('#select-region label');
 var selectRegion=document.querySelector('#select-region');
 var selectProduct=document.querySelector('#select-product');
 var selectProducts=document.querySelectorAll('#select-product input');
+var selectPLabels=document.querySelectorAll('#select-product label');
 var divShow=document.querySelector('#div-show');
 var trs=document.querySelectorAll('#tbody-show tr');
 var tbodyShow=document.querySelector('#tbody-show');
@@ -60,8 +62,7 @@ function arrData(sourceData){
 			regionArr2.push(sourceDatas[i]);
 		}else{
 			regionArr3.push(sourceDatas[i]);
-		};
-		
+		};	
 	};
 	var objArr={
 		0:regionArr1,
@@ -70,12 +71,8 @@ function arrData(sourceData){
 	};
 	return [objArr,regionArr1,regionArr2,regionArr3]
 };
-
 //
-
 window.onload=function(){
-	
-	
 	boxClick();
 	addCheck();
 	status();
