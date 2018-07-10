@@ -9,7 +9,6 @@ function regionsNum(i,j){
 	};
 	return q;
 };
-
 function checkedNum(){//返回选中的个数
 	let regionNum=0;
 	let productNum=0;
@@ -25,15 +24,26 @@ function checkedNum(){//返回选中的个数
 	};
 	return [regionNum,productNum];
 };	
+//根据复选框的选择，选择对应的localStorage数据
+function saleData(i,j){
+	for(let a in objArr){
+		for(let b in objArr[a]){
+			let pro=objArr[a][b].product;
+			let reg=objArr[a][b].region;
+			if((pro==i && reg==j) || (pro==j && reg==i)){
+				return objArr[a][b].sale;
+			};
+		};
+	};
+};
 //添加表格内容
 function textShow(){//不同复选框显示不同的内容
 	[objArr,regionArr1,regionArr2,regionArr3]=arrData(sourceData);
 	let num=checkedNum();
-	
 	for(let i=0;i<selectRegions.length-1;i++){
 		for(let j=0;j<selectProducts.length-1;j++){
 			let dataP=document.querySelectorAll('#data-show p');
-			let inner=objArr[i][j].product+' '+objArr[i][j].region+' '+objArr[i][j].sale;
+			//let inner=objArr[i][j].product+' '+objArr[i][j].region+' '+objArr[i][j].sale;
 			let trs=document.querySelectorAll('#tbody-show tr');
 			let tbodyShow=document.getElementById('tbody-show');
 			if(selectRegions[i].checked){//区域选中
@@ -44,13 +54,12 @@ function textShow(){//不同复选框显示不同的内容
 					for(let x=0;x<trs.length;x++){
 						var t=trs[x].children[0].innerHTML;
 						var w=trs[x].children[1].innerHTML;
-						var e=objArr[i][j].region;
-						var r=objArr[i][j].product;
+						var e=selectRLabels[i].innerText;
+						var r=selectPLabels[j].innerText;
 						if(((t==e)&&(w==r))||((t==r)&&(w==e))){
 						}else{
 							indexx++;
-						}
-							
+						}						
 					};
 					if((indexx==trs.length)&&(trs.length>0)){
 						let tr=document.createElement('tr');
@@ -59,13 +68,13 @@ function textShow(){//不同复选框显示不同的内容
 						for(let x=0;x<14;x++){
 							let th=document.createElement('th');
 							trs[trs.length-1].appendChild(th);
-						};
-						trs[trs.length-1].children[0].innerHTML=objArr[i][j].product;
-						trs[trs.length-1].children[1].innerHTML=objArr[i][j].region;
+						};					
+						trs[trs.length-1].children[0].innerHTML=selectRLabels[i].innerText;
+						trs[trs.length-1].children[1].innerHTML=selectPLabels[j].innerText;
+						let sales=saleData(selectRLabels[i].innerText,selectPLabels[j].innerText);
 						for(let k=2;k<14;k++){
-							trs[trs.length-1].children[k].innerHTML=objArr[i][j].sale[k-2];	
+							trs[trs.length-1].children[k].innerHTML=sales[k-2];	
 						};
-						
 					};
 					if(trs.length==0){
 						let tr=document.createElement('tr');
@@ -75,10 +84,11 @@ function textShow(){//不同复选框显示不同的内容
 							let th=document.createElement('th');
 							trs[trs.length-1].appendChild(th);
 						};
-						trs[trs.length-1].children[0].innerHTML=objArr[i][j].product;
-						trs[trs.length-1].children[1].innerHTML=objArr[i][j].region;
+						trs[trs.length-1].children[0].innerHTML=selectRLabels[i].innerText;
+						trs[trs.length-1].children[1].innerHTML=selectPLabels[j].innerText;
+						let sales=saleData(selectRLabels[i].innerText,selectPLabels[j].innerText);
 						for(let k=2;k<14;k++){
-							trs[trs.length-1].children[k].innerHTML=objArr[i][j].sale[k-2];	
+							trs[trs.length-1].children[k].innerHTML=sales[k-2];	
 						};	
 					};
 					
@@ -87,8 +97,8 @@ function textShow(){//不同复选框显示不同的内容
 					for(let k=0;k<trs.length;k++){
 						let a=trs[k].children[0].innerHTML;
 						let b=trs[k].children[1].innerHTML;
-						let c=objArr[i][j].region;
-						let d=objArr[i][j].product;
+						let c=selectRLabels[i].innerText;
+						let d=selectPLabels[j].innerText;
 						if(((a==c)&&(b==d))||((a==d)&&(b==c))){
 							tbodyShow.removeChild(trs[k]);
 						};
@@ -113,8 +123,6 @@ function textShow(){//不同复选框显示不同的内容
 	let names="clicks";
 	canvasLine(names);
 };
-
-
 function toChange(num){
 	let trs=document.querySelectorAll('#tbody-show tr');
 	if((num[0]==1)&&(num[1]>1)){//一个区域多个商品时，区域在第一列，商品在第二列
@@ -126,8 +134,7 @@ function toChange(num){
 					trs[k].children[0].innerHTML=trs[k].children[1].innerHTML;
 					trs[k].children[1].innerHTML=inn;
 					l.children[0].innerHTML='区域';
-					l.children[1].innerHTML='产品';
-					
+					l.children[1].innerHTML='产品';				
 				};
 				let inn1=trs[k].children[0].innerHTML;
 				if(inn1=='华东'||inn1=='华南'||inn1=='华北'){//合并单元
