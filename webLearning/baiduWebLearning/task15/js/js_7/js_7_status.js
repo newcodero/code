@@ -58,9 +58,9 @@ function boxClick(){
 
 function thInput(){
 	var arr=['a','b','c','d','e','f','g','h','i','j','k'];
-	
 	let nhash=getHash();
 	let localData=localStorage.thdata;
+	//取出hash中的数据记录标签
 	for(let x=0;x<arr.length;x++){
 		var ind=nhash.indexOf(arr[x]);
 		if(ind!==-1){
@@ -68,9 +68,9 @@ function thInput(){
 			var indn=ind;
 		}
 	};
-	if(localData!==undefined){
-		var index1=localData.indexOf(arr[y+1]);
-		var index2=localData.indexOf(arr[y+2]);
+	if(y!==undefined && localData !== undefined){//console.log(localData);console.log(index1);console.log(index2);
+		var index1=localData.indexOf(arr[y]);
+		var index2=localData.indexOf(arr[y+1]);
 		if(indn!==-1){
 			let trs=document.querySelectorAll('#tbody-show tr');
 			let num=checkedNum();
@@ -83,7 +83,7 @@ function thInput(){
 					reg=trs[i].children[1].innerText;
 				};
 				let localData=localStorage.thdata;
-				if(index2==-1){
+				if(index2==-1 || index2==0){
 					localData=localData.substring(index1);	
 				}else{
 					localData=localData.substring(index1,index2-1);
@@ -139,7 +139,6 @@ function thHash(trs,i,j){
 		reg=trs[i].children[1].innerText;
 	};
 	let data=trs[i].children[j].innerText;
-	
 	for(let x=0;x<arr.length;x++){
 		var ind=nhash.indexOf(arr[x]);
 		if(ind!==-1){
@@ -149,10 +148,12 @@ function thHash(trs,i,j){
 			}else{
 				var y=x;	
 				var indd;
-				do{//判断本地localStorage是否保存有
-					y++;
-					indd=localStorage.thdata.indexOf(arr[y]);
-				}while(indd!==-1);
+				if(localStorage.thdata !== undefined){
+					do{//判断本地localStorage是否保存有
+						y++;
+						indd=localStorage.thdata.indexOf(arr[y]);
+					}while(indd!==-1);
+				};
 				if(y==arr.length){y=x+1};
 			};
 		};
@@ -160,7 +161,7 @@ function thHash(trs,i,j){
 	if(ind1==undefined){
 		var y=0;
 	}else{
-		location.hash=nhash.slice(0,ind1);
+		location.hash=nhash.slice(0,ind1)+nhash.slice(ind1+1);
 	};
 	location.hash+=arr[y];
 	if(localStorage.thdata!==undefined){
